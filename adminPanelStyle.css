@@ -32,3 +32,12 @@ body,html{
     border-color: black;
     background-color:  #746a6a;
 }
+.gamesPanel{
+    display: flex;
+
+}
+.individualGamePanel{
+    background-color: #f98888;
+    width: 300px;
+    height:100px;
+}
