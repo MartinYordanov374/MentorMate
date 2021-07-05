@@ -1,0 +1,12 @@
+body,html{
+    background-color: gray;
+}
+.pageWrapper{
+    margin-top: 2%;
+}
+.adminPanelContainer{
+    border-style: solid;
+    width: 800;
+    height: 600;
+    border-color: red;
+}
