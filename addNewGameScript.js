@@ -2,6 +2,7 @@ const addNewGameButton = document.getElementById('newGame')
 
 let panelCounter = 0
 let dropZoneContainer = document.getElementById('dropZoneContainer')
+let panels = []
 addNewGameButton.addEventListener('click',(event)=>
 {   
     if(panelCounter>=4)
@@ -31,6 +32,6 @@ addNewGameButton.addEventListener('click',(event)=>
             document.getElementById('gamesPanelContainer').appendChild(newElem)
         }    
     }
+    panels.push(1)
     panelCounter+=1
-
 })
