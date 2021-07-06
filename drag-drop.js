@@ -2,15 +2,10 @@ let draggedElement = ''
 document.addEventListener("drag",(event) => {
 });
 document.addEventListener('dragstart', (event)=>{
-    console.log('dragging started')
     draggedElement = event.target
 })
 document.addEventListener('dragend', (event)=>{
-    console.log('dragging ended')
-
 })
-
-
 document.addEventListener('dragover', (event)=>{
 
     event.preventDefault()
