@@ -1,5 +1,6 @@
 const addScoreboardButton = document.getElementById('scoreboard')
 let scoreBoardCounter = 0
+let scoreboards=[]
 addScoreboardButton.addEventListener('click',(event)=>{
     if(panels.length>=1)
     {
@@ -14,7 +15,6 @@ addScoreboardButton.addEventListener('click',(event)=>{
             let scoreboard = document.createElement('DIV')
             scoreboard.className='scoreboardPanel'
             scoreboard.id=`${scoreBoardCounter}`
-            scoreboard.innerText=`${scoreBoardCounter}`
             document.getElementById('scoreboardContainer').appendChild(scoreboard)
         }
     }
@@ -30,10 +30,10 @@ addScoreboardButton.addEventListener('click',(event)=>{
             let scoreboard = document.createElement('DIV')
             scoreboard.className='scoreboardPanel'
             scoreboard.id=`${scoreBoardCounter}`
-            scoreboard.innerText=`${scoreBoardCounter}`
             document.getElementById('scoreboardContainer').appendChild(scoreboard)
         }
     }
+    scoreboards.push(1)
     
     scoreBoardCounter+=1
 
