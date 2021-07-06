@@ -40,6 +40,14 @@ body,html{
     background-color: #f98888;
     width: 300px;
     height:100px;
-    border-style: solid;
-    border-color: red;
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+.dropzone{
+    width: 300px;
+    height: 400;
+    margin-left: 2%;
+    margin-top: 2%;
+    max-height: inherit;
 }
