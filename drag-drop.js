@@ -12,13 +12,10 @@ document.addEventListener('dragend', (event)=>{
 
 
 document.addEventListener('dragover', (event)=>{
-    console.log('dragging over')
 
     event.preventDefault()
 })
 document.addEventListener('dragenter', (event)=>{
-    console.log('dragging entered')
-
     if(event.target.className=='dropzone')
     {
         event.target.style='opacity:0.5'
@@ -26,8 +23,6 @@ document.addEventListener('dragenter', (event)=>{
     }
 },false)
 document.addEventListener('dragleave', (event)=>{
-    console.log('dragging left')
-
     if(event.target.className=='dropzone')
     {
         event.target.style=''
@@ -36,8 +31,6 @@ document.addEventListener('dragleave', (event)=>{
 },false)
 
 document.addEventListener('drop', (event)=>{
-    console.log('dragging dropped')
-
     if(event.target.className==='dropzone')
     {
         event.target.appendChild(draggedElement)

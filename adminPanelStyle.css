@@ -27,13 +27,13 @@ body,html{
     margin-left: 1%;
     margin-top: 1.5%;
     border-style: solid;
-    width: 800;
-    height: 600;
+    width: 800px;
+    height: 600px;
     border-color: black;
     background-color:  #746a6a;
 }
 .gamesPanel{
-    display: flex
+    display: flex;
 
 }
 .individualGamePanel{
@@ -50,4 +50,20 @@ body,html{
     margin-left: 2%;
     margin-top: 2%;
     max-height: inherit;
+}
+.scoreboardContainer{
+    display: flex;
+    float: right;
+    margin-top: 2%;
+
+}
+.scoreboardPanel{
+    width:400px;
+    height: 350px;
+    background-color:#feffbb;
+    /* display: flex; */
+    /* float: right; */
+    /* margin-left: 50%; */
+
+
 }
