@@ -33,7 +33,7 @@ body,html{
     background-color:  #746a6a;
 }
 .gamesPanel{
-    display: flex;
+    display: flex
 
 }
 .individualGamePanel{
