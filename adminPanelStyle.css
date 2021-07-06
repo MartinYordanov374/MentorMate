@@ -40,4 +40,6 @@ body,html{
     background-color: #f98888;
     width: 300px;
     height:100px;
+    border-style: solid;
+    border-color: red;
 }
