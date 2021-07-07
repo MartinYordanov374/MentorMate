@@ -14,8 +14,9 @@ let y = 0
 let widgetType = 'gamePanel'
 class GamePanel
 {
-    constructor(width, height, x, y,widgetType)
+    constructor(width, height, id, x, y,widgetType)
     {
+        this.id=id,
         this.width=width,
         this.height = height,
         this.x=x,
@@ -28,10 +29,9 @@ addNewGameButton.addEventListener('click',(event)=>{
     // create initial widget object with absolute X and Y coords if there are no elements in the list, prior to this one
     let xy_data = localStorage.getItem('XY_DATA')
     let parsed_xy_data=JSON.parse(xy_data)
-    console.log(parsed_xy_data)
     if(objectCounter<=0)
     {
-        newWidgetObj = new GamePanel(300,100,x,y,widgetType)
+        newWidgetObj = new GamePanel(300,100,parsed_xy_data.id,parsed_xy_data.x,parsed_xy_data.y,widgetType)
         gamePanelWidgets.push(newWidgetObj)
 
     }
@@ -60,14 +60,25 @@ addNewGameButton.addEventListener('click',(event)=>{
         }
         if(isValidX && isValidY)
         {
-            newWidgetObj = new GamePanel(300,100,x,y,widgetType)
+            newWidgetObj = new GamePanel(300,100,parsed_xy_data.id,parsed_xy_data.x,parsed_xy_data.y,widgetType)
             // save the objects in a list  
-            gamePanelWidgets.push(newWidgetObj)
+            // check if object is already in the list, if not add it
+            if(gamePanelWidgets.indexOf(newWidgetObj)==-1)
+            {
+                gamePanelWidgets.push(newWidgetObj)
+
+            }
+        
+                
+            
         }
 
     }
     objectCounter+=1
-    // create a new HTML element by the objects in the list
-    // createElements()
+    
+    for(gamePanelWidget of gamePanelWidgets)
+    {
+        console.log(gamePanelWidgets)
+    }
 
 })

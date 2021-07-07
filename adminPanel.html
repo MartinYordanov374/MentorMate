@@ -34,17 +34,18 @@
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script>
+            let elementCounter = -1
             $(document).ready()
             {
                 // create a class for the gamePanel
-               
                 // create an object that is an instance of the gamePanel class everytime a new widget button is pressed
                 // add every new object to a list
                 //iterate over the list whenever you create a new widget and check for a free space and then add the new widget there, if there is no free space, do the respective action
                 $('#newGame').on('click',()=>{
+                    elementCounter+=1
                     const newElement = document.createElement('div'); // this line here creates the div element
                     newElement.draggable=true // this line here makes the div element draggable
-                    newElement.className='individualGamePanel'; // this line gives the div element a className
+                    newElement.className='individualGamePanel'+` ${elementCounter}`; // this line gives the div element a className
                     newElement.id='individualGamePanel'; // this line gives the div element an ID
                     newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
                     const newElementGrid = document.querySelector('.gamesPanel'); // this line here selectes the games panel that I'll use to append the newly created element to
@@ -56,16 +57,34 @@
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
-                            // console.log(x_pos,y_pos)
+                            let classNamee = $(this).attr('class')
+                            let widgetNumber = classNamee.split(' ')[1]
                             let width = $(this).width()
                             let height = $(this).height()   
                             let xy_data={
+                                id:widgetNumber,
+                                x:x_pos,
+                                y:y_pos
+                            }         
+                            let stringified = JSON.stringify(xy_data)
+                            localStorage.setItem('XY_DATA', stringified)          
+                        },
+                        drag: function()
+                        {
+                            // here I am updating the data, that is sent to the JS file, which in turn changes the data for the respective gamepanel 
+                            let offset = $(this).offset()
+                            let x_pos = offset.left
+                            let y_pos = offset.top
+                            let classNamee = $(this).attr('class')
+                            let widgetNumber = classNamee.split(' ')[1]
+                            let xy_data={
+                                id: widgetNumber,
                                 x:x_pos,
                                 y:y_pos
                             }         
                             let stringified = JSON.stringify(xy_data)
                             // JSON.parse(xy_data)
-                            localStorage.setItem('XY_DATA', stringified)          
+                            localStorage.setItem('XY_DATA', stringified)     
                         }
                     })
                 })
