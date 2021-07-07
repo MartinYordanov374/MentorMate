@@ -13,14 +13,14 @@ document.addEventListener('dragover', (event)=>{
     let x = event.pageX
     let y = event.pageY
     console.log(x,y)
-    if(event.pageX>maxWidth)
+    if(event.pageX>maxWidth || event.pageX<=290)
     {
         console.log('Invalid X')
         event.pageX=0
     }
-    else if(event.pageY>maxHeight)
+    else if(event.pageY>maxHeight || event.pageY<=117)
     {
-        console.log('Invalid Y')
+        console.log('Invalid Y' )
         event.pageY=0
     }
     // console.log(`X: ${event.pageX}, Y:${event.pageY}`)
