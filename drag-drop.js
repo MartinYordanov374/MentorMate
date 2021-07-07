@@ -12,20 +12,17 @@ document.addEventListener('dragover', (event)=>{
     event.preventDefault()
     let x = event.pageX
     let y = event.pageY
-    if(event.target.className=='individualGamePanel')
-    {
-        alert('ERROR! OVERLAPPING ELEMENTS ARE NOT ALLOWED!')
-    }
+
     console.log(x,y)
     console.log(maxWidth, maxHeight)
     if(event.pageX>maxWidth || event.pageX<=290)
     {
-        console.log('Invalid X')
+        alert('Invalid X')
         event.pageX=0
     }
     else if(event.pageY>maxHeight || event.pageY<=117)
     {
-        console.log('Invalid Y' )
+        alert('Invalid Y' )
         event.pageY=0
     }
     // console.log(`X: ${event.pageX}, Y:${event.pageY}`)
@@ -44,5 +41,8 @@ document.addEventListener('dragleave', (event)=>{
 },false)
 
 document.addEventListener('drop', (event)=>{
-    
+    if(event.target.className=='individualGamePanel')
+    {
+        alert('ERROR! OVERLAPPING ELEMENTS ARE NOT ALLOWED!')
+    }
 })
