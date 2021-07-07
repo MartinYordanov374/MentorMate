@@ -28,7 +28,7 @@
                 </div>
             </div>
             <script src='./addNewGameScript.js'></script>
-            <script src='./drag-drop.js'></script>
+            <!-- <script src='./drag-drop.js'></script> -->
             <script src='./addScoreboard.js'></script>
             <script src='./overflowDetector.js'></script>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -36,7 +36,29 @@
             <script>
             $(document).ready()
             {
-                //
+                // $('.individualGamePanel').draggable()
+                $('#newGame').on('click',()=>{
+                    const newElement = document.createElement('div');
+                    newElement.draggable=true
+
+                    newElement.className='individualGamePanel';
+                    newElement.id='individualGamePanel';
+                    newElement.style.position = 'relative'
+                    const newElementGrid = document.querySelector('.gamesPanel');
+                    newElementGrid.appendChild(newElement);
+                    $('.individualGamePanel').draggable({
+                        drag: function(){
+                            console.log('dragging')
+                            let offset = $(this).offset()
+                            let x = offset.left
+                            let y = offset.top
+                            console.log(`X: ${x}; Y: ${y}`)
+                        }
+                    })
+                   
+
+                    
+                })
             }
             </script>
 

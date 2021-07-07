@@ -1,6 +1,7 @@
 const addScoreboardButton = document.getElementById('scoreboard')
 let scoreBoardCounter = 0
 let scoreboards=[]
+let panels = 0
 addScoreboardButton.addEventListener('click',(event)=>{
     if(panels.length>=1)
     {

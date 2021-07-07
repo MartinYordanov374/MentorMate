@@ -66,7 +66,7 @@ addNewGameButton.addEventListener('click',(event)=>{
     }
     objectCounter+=1
     // create a new HTML element by the objects in the list
-    createElements()
+    // createElements()
 
 })
 
