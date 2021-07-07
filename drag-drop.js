@@ -12,7 +12,12 @@ document.addEventListener('dragover', (event)=>{
     event.preventDefault()
     let x = event.pageX
     let y = event.pageY
+    if(event.target.className=='individualGamePanel')
+    {
+        alert('ERROR! OVERLAPPING ELEMENTS ARE NOT ALLOWED!')
+    }
     console.log(x,y)
+    console.log(maxWidth, maxHeight)
     if(event.pageX>maxWidth || event.pageX<=290)
     {
         console.log('Invalid X')
