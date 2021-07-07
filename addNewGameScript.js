@@ -25,6 +25,7 @@ class GamePanel
 }
 
 addNewGameButton.addEventListener('click',(event)=>{
+    console.log('max height now:', maxHeight)
     // create initial widget object with absolute X and Y coords if there are no elements in the list, prior to this one
     if(objectCounter<=0)
     {

@@ -4,6 +4,7 @@ document.addEventListener('mousedown',()=>{
     elementContainer.offsetWidth < elementContainer.scrollWidth)
     {
         elementContainer.style.height=elementContainer.clientHeight+300
+        maxHeight=elementContainer.clientHeight+300
     }
     else
     {
