@@ -47,12 +47,23 @@
                     const newElementGrid = document.querySelector('.gamesPanel');
                     newElementGrid.appendChild(newElement);
                     $('.individualGamePanel').draggable({
+                        containment: '.adminPanelContainer',
                         drag: function(){
-                            console.log('dragging')
                             let offset = $(this).offset()
-                            let x = offset.left
-                            let y = offset.top
-                            console.log(`X: ${x}; Y: ${y}`)
+                            let x_pos = offset.left
+                            let y_pos = offset.top
+                            let widthMaxRight = 660
+                            let widthMaxLeft = 153
+                            // console.log(`X: ${x}; Y: ${y}`)  
+                            if(x_pos>=widthMaxRight)
+                            {
+                               
+                               console.log(`invalid X at ${x_pos}`)
+                            }
+                            else if(x_pos<=widthMaxLeft)
+                            {
+                                console.log(`invalid X at ${x_pos}`)
+                            }
                         }
                     })
                    
