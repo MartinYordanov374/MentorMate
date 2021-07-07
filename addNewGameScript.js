@@ -53,7 +53,5 @@ addNewGameButton.addEventListener('click',(event)=>{
 
     }
     objectCounter+=1
-    gamePanelWidgets[parsed_xy_data_updated.id].x=parsed_xy_data_updated.x
-    gamePanelWidgets[parsed_xy_data_updated.id].y=parsed_xy_data_updated.y
 
 })

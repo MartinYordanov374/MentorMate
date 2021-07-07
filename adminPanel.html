@@ -28,7 +28,6 @@
                 </div>
             </div>
             <script src='./addNewGameScript.js'></script>
-            <!-- <script src='./drag-drop.js'></script> -->
             <script src='./addScoreboard.js'></script>
             <script src='./overflowDetector.js'></script>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -54,6 +53,7 @@
                         containment: '.adminPanelContainer', // this line permits the movement of the dragged elements outside of the admin panel
                         create: function()
                         {
+                            
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
@@ -72,6 +72,7 @@
                         drag: function()
                         {
                             // here I am updating the data, that is sent to the JS file, which in turn changes the data for the respective gamepanel 
+                            
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
@@ -83,7 +84,24 @@
                                 y:y_pos
                             }         
                             let stringified = JSON.stringify(xy_data)
-                            localStorage.setItem('XY_DATA_UPDATED', stringified)     
+                            localStorage.setItem('XY_DATA_UPDATED', stringified) 
+
+                            let xy_data_updated = localStorage.getItem('UPDATED_XY_DATA')
+                            $('.gamesPanel').children('div').each(function () {
+                                if(widgetNumber != $(this).attr('class').split(' ')[1])
+                                {
+                                    console.log(`${x_pos} ${$(this).offset().left}`)
+                                    if (x_pos <= $(this).offset().left)
+                                    {
+                                        console.log('collision on X')
+                                    }
+                                    if (y_pos <= $(this).offset().top)
+                                    {
+                                        console.log('collision on Y')
+                                    } 
+                                }
+                            });
+
                         }
                     })
                 })
