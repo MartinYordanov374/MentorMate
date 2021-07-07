@@ -25,8 +25,10 @@ class GamePanel
 }
 
 addNewGameButton.addEventListener('click',(event)=>{
-    console.log('max width now:', maxWidth)
     // create initial widget object with absolute X and Y coords if there are no elements in the list, prior to this one
+    let xy_data = localStorage.getItem('XY_DATA')
+    let parsed_xy_data=JSON.parse(xy_data)
+    console.log(parsed_xy_data)
     if(objectCounter<=0)
     {
         newWidgetObj = new GamePanel(300,100,x,y,widgetType)
@@ -38,6 +40,7 @@ addNewGameButton.addEventListener('click',(event)=>{
     {
         // x+=300
         // y+=300
+        //iterate over the list holding the objects and check each widget's position
         if(x>maxWidth)
         {
             x=maxWidth
@@ -60,7 +63,6 @@ addNewGameButton.addEventListener('click',(event)=>{
             newWidgetObj = new GamePanel(300,100,x,y,widgetType)
             // save the objects in a list  
             gamePanelWidgets.push(newWidgetObj)
-            console.log('valid')
         }
 
     }
@@ -69,26 +71,3 @@ addNewGameButton.addEventListener('click',(event)=>{
     // createElements()
 
 })
-
-function createElements()
-{
-    let gamePanelContainer = document.getElementById('gamesPanelContainer')
-    for(element of gamePanelWidgets)
-        {
-            const newElement = document.createElement('div');
-            newElement.draggable=true
-
-            newElement.className='individualGamePanel';
-            newElement.id='individualGamePanel';
-            newElement.style.position = 'relative'
-
-            newElement.left = element.x
-            newElement.top = element.y
-
-
-            const newElementGrid = document.querySelector('.gamesPanel');
-            newElementGrid.appendChild(newElement);
-    
-        }
-    gamePanelWidgets=[]
-}

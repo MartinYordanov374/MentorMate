@@ -6,8 +6,4 @@ document.addEventListener('mousedown',()=>{
         elementContainer.style.height=elementContainer.clientHeight+300
         maxHeight=elementContainer.clientHeight+300
     }
-    else
-    {
-        console.log('no overflow detected')
-    }
 })

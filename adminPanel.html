@@ -36,39 +36,38 @@
             <script>
             $(document).ready()
             {
-                // $('.individualGamePanel').draggable()
+                // create a class for the gamePanel
+               
+                // create an object that is an instance of the gamePanel class everytime a new widget button is pressed
+                // add every new object to a list
+                //iterate over the list whenever you create a new widget and check for a free space and then add the new widget there, if there is no free space, do the respective action
                 $('#newGame').on('click',()=>{
-                    const newElement = document.createElement('div');
-                    newElement.draggable=true
-
-                    newElement.className='individualGamePanel';
-                    newElement.id='individualGamePanel';
-                    newElement.style.position = 'relative'
-                    const newElementGrid = document.querySelector('.gamesPanel');
-                    newElementGrid.appendChild(newElement);
-                    $('.individualGamePanel').draggable({
-                        containment: '.adminPanelContainer',
-                        drag: function(){
+                    const newElement = document.createElement('div'); // this line here creates the div element
+                    newElement.draggable=true // this line here makes the div element draggable
+                    newElement.className='individualGamePanel'; // this line gives the div element a className
+                    newElement.id='individualGamePanel'; // this line gives the div element an ID
+                    newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
+                    const newElementGrid = document.querySelector('.gamesPanel'); // this line here selectes the games panel that I'll use to append the newly created element to
+                    newElementGrid.appendChild(newElement); // this line appends the div to the gamesPanel
+                    $('.individualGamePanel').draggable({ // here I use JQUERY to impl;ement the dragging of the elements
+                        containment: '.adminPanelContainer', // this line permits the movement of the dragged elements outside of the admin panel
+                        create: function()
+                        {
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
-                            let widthMaxRight = 660
-                            let widthMaxLeft = 153
-                            // console.log(`X: ${x}; Y: ${y}`)  
-                            if(x_pos>=widthMaxRight)
-                            {
-                               
-                               console.log(`invalid X at ${x_pos}`)
-                            }
-                            else if(x_pos<=widthMaxLeft)
-                            {
-                                console.log(`invalid X at ${x_pos}`)
-                            }
+                            // console.log(x_pos,y_pos)
+                            let width = $(this).width()
+                            let height = $(this).height()   
+                            let xy_data={
+                                x:x_pos,
+                                y:y_pos
+                            }         
+                            let stringified = JSON.stringify(xy_data)
+                            // JSON.parse(xy_data)
+                            localStorage.setItem('XY_DATA', stringified)          
                         }
                     })
-                   
-
-                    
                 })
             }
             </script>
