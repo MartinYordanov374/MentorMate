@@ -29,6 +29,10 @@ addNewGameButton.addEventListener('click',(event)=>{
     // create initial widget object with absolute X and Y coords if there are no elements in the list, prior to this one
     let xy_data = localStorage.getItem('XY_DATA')
     let parsed_xy_data=JSON.parse(xy_data)
+
+    let xy_data_updated = localStorage.getItem('XY_DATA_UPDATED')
+    let parsed_xy_data_updated =JSON.parse(xy_data_updated)
+
     if(objectCounter<=0)
     {
         newWidgetObj = new GamePanel(300,100,parsed_xy_data.id,parsed_xy_data.x,parsed_xy_data.y,widgetType)
@@ -38,28 +42,6 @@ addNewGameButton.addEventListener('click',(event)=>{
     // - get the previous object in the list and when creating the new object add the width and height to the last object's X and Y if they are, of course, legal variables
     else
     {
-        // x+=300
-        // y+=300
-        //iterate over the list holding the objects and check each widget's position
-        if(x>maxWidth)
-        {
-            x=maxWidth
-            
-        }
-        else
-        {
-            isValidX=true
-        }
-        if(y>maxHeight)
-        {
-            y=maxHeight
-        }
-        else
-        {
-            isValidY=true
-        }
-        if(isValidX && isValidY)
-        {
             newWidgetObj = new GamePanel(300,100,parsed_xy_data.id,parsed_xy_data.x,parsed_xy_data.y,widgetType)
             // save the objects in a list  
             // check if object is already in the list, if not add it
@@ -68,17 +50,10 @@ addNewGameButton.addEventListener('click',(event)=>{
                 gamePanelWidgets.push(newWidgetObj)
 
             }
-        
-                
-            
-        }
 
     }
     objectCounter+=1
-    
-    for(gamePanelWidget of gamePanelWidgets)
-    {
-        console.log(gamePanelWidgets)
-    }
+    gamePanelWidgets[parsed_xy_data_updated.id].x=parsed_xy_data_updated.x
+    gamePanelWidgets[parsed_xy_data_updated.id].y=parsed_xy_data_updated.y
 
 })
