@@ -37,24 +37,14 @@ body,html{
     grid-template-columns: 1fr 1fr;
    
 }
-  
-  
-
 .individualGamePanel{
     background-color: #f98888;
     width: 300px;
     height:100px;
-    margin-left: 2%;
     margin-top: 2%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.dropzone{
-    width: 300px;
-    height: 100px;
-    margin-left: 2%;
-    margin-top: 2%;
-    max-height: inherit;
+    position: relative;
 }
 .scoreboardContainer{
     display: flex;

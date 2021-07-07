@@ -10,6 +10,9 @@ document.addEventListener('dragend', (event)=>{
 document.addEventListener('dragover', (event)=>{
 
     event.preventDefault()
+    let x = event.pageX
+    let y = event.pageY
+    console.log(x,y)
     if(event.pageX>maxWidth)
     {
         console.log('Invalid X')
@@ -20,10 +23,9 @@ document.addEventListener('dragover', (event)=>{
         console.log('Invalid Y')
         event.pageY=0
     }
-    console.log(event.pageX, event.pageY)
+    // console.log(`X: ${event.pageX}, Y:${event.pageY}`)
 })
 document.addEventListener('dragenter', (event)=>{
-    console.log(event.target.className)
     if(event.target.className=='gamesPanelContainer')
     {
 
