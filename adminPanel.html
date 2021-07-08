@@ -57,8 +57,8 @@
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
-                            let classNamee = $(this).attr('class')
-                            let widgetNumber = classNamee.split(' ')[1]
+                            let classCurrentWidget = $(this).attr('class')
+                            let widgetNumber = classCurrentWidget.split(' ')[1]
                             let width = $(this).width()
                             let height = $(this).height()   
                             let xy_data={
@@ -79,55 +79,50 @@
                             let width =$(this).width()
 
                             let y_pos = offset.top
-                            let classNamee = $(this).attr('class')
-                            let widgetNumber = classNamee.split(' ')[1]
+                            let classCurrentWidget = $(this).attr('class')
+                            let widgetNumber = classCurrentWidget.split(' ')[1]
                             let xy_data={
                                 id: widgetNumber,
                                 x:x_pos,
                                 y:y_pos
                             }         
+
+                            let rect1 = $(this).offset()
+
                             let stringified = JSON.stringify(xy_data)
                             localStorage.setItem('XY_DATA_UPDATED', stringified) 
                             let xy_data_updated = localStorage.getItem('UPDATED_XY_DATA')
-
+                            
                             $('.gamesPanel').children('div').each(function () {
                                 if(widgetNumber != $(this).attr('class').split(' ')[1])
                                 {
+                                    let rect2 = $(this).offset()
                                     // this is where I am getting the center point of the rectangle that is being dragged at the moment
                                     let rectangle_moved_x = x_pos+width/2;
                                     let rectangle_moved_y= y_pos+height/2;
-
-
+                                    
+                                    
                                     // this is where I am getting the center point of the rectangle that the dragged element shall collide wiith
-
+                                    
                                     let rectangle_collidable_x = $(this).offset().left+$(this).width()/2;
                                     let rectangle_collidable_y = $(this).offset().top+$(this).height()/2;
-
-
-
-                                    // calculate the distance using the Pythagorean Theorem (a^2 + b^2 = c^2)
-                                    var distanceSquared = Math.pow(rectangle_moved_x -rectangle_collidable_x, 2) + Math.pow(rectangle_moved_y - rectangle_collidable_y, 2);
-                                    var distance = Math.sqrt(distanceSquared);
-                                    let distanceBetweenX = rectangle_moved_x-rectangle_collidable_y
-                                    let distanceBetweenY = rectangle_collidable_x-rectangle_moved_y
-
-                                    // console.log(`X: ${distanceBetweenX} -> ${distance}`)
-                                    // console.log(`Y: ${distanceBetweenY} -> ${distance}`)
-
-                                    if(distanceBetweenX>distance && distanceBetweenY>distance)
+                                    
+                                    x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                                    y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                                    overlapArea = x_overlap*y_overlap
+                                    if(overlapArea>0)
                                     {
-                                        console.log('elements cannot overlap!')
                                         $('.individualGamePanel').draggable({
                                             revert: true
                                         })
                                     }
                                     else
                                     {
+                                        console.log('no collision')
                                         $('.individualGamePanel').draggable({
                                             revert: false
                                         })
                                     }
-                                    
                                    
                                 }
                             });
