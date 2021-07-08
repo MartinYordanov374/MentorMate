@@ -114,6 +114,7 @@
                                     overlapArea = x_overlap*y_overlap
                                     if(overlapArea>0)
                                     {
+                                        alert('ERROR! You cannot put this widget here !')
                                         console.log(classCurrentWidget.split(' ')[1])
                                         $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: true
