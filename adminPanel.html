@@ -36,6 +36,8 @@
             let elementCounter = -1
             $(document).ready()
             {
+                let currentLeft = undefined
+                let currentBottom = undefined
                 // create a class for the gamePanel
                 // create an object that is an instance of the gamePanel class everytime a new widget button is pressed
                 // add every new object to a list
@@ -53,7 +55,6 @@
                         containment: '.adminPanelContainer', // this line permits the movement of the dragged elements outside of the admin panel
                         create: function()
                         {
-                            
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let y_pos = offset.top
@@ -71,6 +72,7 @@
                         },
                         drag: function()
                         {
+                        
                             // here I am updating the data, that is sent to the JS file, which in turn changes the data for the respective gamepanel 
                             
                             let offset = $(this).offset()
@@ -112,17 +114,23 @@
                                     overlapArea = x_overlap*y_overlap
                                     if(overlapArea>0)
                                     {
-                                        $('.individualGamePanel').draggable({
+                                        console.log(classCurrentWidget.split(' ')[1])
+                                        $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: true
                                         })
                                     }
                                     else
                                     {
-                                        console.log('no collision')
-                                        $('.individualGamePanel').draggable({
+                                        $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: false
                                         })
                                     }
+                                    // else
+                                    // {
+                                    //     $('.individualGamePanel').draggable({
+                                    //         revert: false
+                                    //     })
+                                    // }
                                    
                                 }
                             });
