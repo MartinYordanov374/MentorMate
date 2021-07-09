@@ -69,6 +69,34 @@
                             }         
                             let stringified = JSON.stringify(xy_data)
                             localStorage.setItem('XY_DATA', stringified)          
+                            let rect1 = $(this).offset()
+
+                            $('.gamesPanel').children('div').each(function () {
+                                if(widgetNumber!=$(this).attr('class').split(' ')[1])
+                                {
+                                    let rect2 = $(this).offset()
+                                    x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                                    y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                                    overlapArea = x_overlap*y_overlap
+                                    console.log(overlapArea)
+                                    if(overlapArea>0)
+                                    {
+                                        // alert('ERROR! You cannot put this widget here !')
+                                        // $('.'+classCurrentWidget.split(' ')[1]).draggable({
+                                        //     revert: true
+                                        // })
+                                        console.log('collision on creation detected')
+                                        // $('.'+$(this).attr('class').split(' ')[1]).appendTo('.'+classCurrentWidget.split(' ')[1])
+                                        $(this).insertAfter($('.'+classCurrentWidget.split(' ')[1]))
+                                    }
+                                    else
+                                    {
+                                        // $('.'+classCurrentWidget.split(' ')[1]).draggable({
+                                        //     revert: false
+                                        // })
+                                    }
+                                }
+                            })
                         },
                         drag: function()
                         {
@@ -99,23 +127,13 @@
                                 if(widgetNumber != $(this).attr('class').split(' ')[1])
                                 {
                                     let rect2 = $(this).offset()
-                                    // this is where I am getting the center point of the rectangle that is being dragged at the moment
-                                    let rectangle_moved_x = x_pos+width/2;
-                                    let rectangle_moved_y= y_pos+height/2;
-                                    
-                                    
-                                    // this is where I am getting the center point of the rectangle that the dragged element shall collide wiith
-                                    
-                                    let rectangle_collidable_x = $(this).offset().left+$(this).width()/2;
-                                    let rectangle_collidable_y = $(this).offset().top+$(this).height()/2;
-                                    
                                     x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
                                     y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
                                     overlapArea = x_overlap*y_overlap
+                                    console.log(overlapArea)
                                     if(overlapArea>0)
                                     {
                                         alert('ERROR! You cannot put this widget here !')
-                                        console.log(classCurrentWidget.split(' ')[1])
                                         $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: true
                                         })
