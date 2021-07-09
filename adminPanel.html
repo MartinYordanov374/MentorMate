@@ -139,7 +139,6 @@
                         containment: '.adminPanelContainer',
                         create: function()
                         {
-                            console.log('Created Scoreboard')
                             let offset = $(this).offset()
                             let x_pos_rectangle_one = offset.left
                             let y_pos_rectangle_one = offset.top
@@ -182,7 +181,39 @@
                         },
                         drag: function()
                         {
-                            // console.log('Dragging')
+                            let offset = $(this).offset()
+                            let x_pos_rectangle_one = offset.left
+                            let y_pos_rectangle_one = offset.top
+                            let rect1 = $(this).offset()
+                            let firstRectangleId = $(this).attr('id')
+                            $('.scoreboardContainer').children('div').each(function () {
+                                let secondRectangleId = $(this).attr('id')
+                                if(firstRectangleId!=secondRectangleId)
+                                {
+                                    let rect2 = $(this).offset()
+                                    let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                                    let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                                    let overlapArea = x_overlap*y_overlap
+                                    if(overlapArea>0)
+                                    {
+                                        console.log('collision detected')
+                                        $('#'+firstRectangleId).draggable({
+                                           revert: true
+                                        })
+                                    }
+                                    else
+                                    {
+                                        $('#'+firstRectangleId).draggable({
+                                           revert: false
+                                        })
+                                    }
+
+
+                                                        
+                                }
+
+
+                            })
                         }
                     })
                 })
