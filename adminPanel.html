@@ -38,10 +38,6 @@
             {
                 let currentLeft = undefined
                 let currentBottom = undefined
-                // create a class for the gamePanel
-                // create an object that is an instance of the gamePanel class everytime a new widget button is pressed
-                // add every new object to a list
-                //iterate over the list whenever you create a new widget and check for a free space and then add the new widget there, if there is no free space, do the respective action
                 $('#newGame').on('click',()=>{
                     elementCounter+=1
                     const newElement = document.createElement('div'); // this line here creates the div element
@@ -141,9 +137,10 @@
                     })
                 })
                 $('#scoreboard').on('click', ()=>{
-                    console.log('created new scoreboard')
+
                     $(`.scoreboardPanel`).draggable({
                         containment: '.adminPanelContainer',
+                        axis: 'x'
                     })
                 })
             }
