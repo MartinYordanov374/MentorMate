@@ -49,7 +49,7 @@ body,html{
 }
 .scoreboardContainer{
     display: flex;
-    float: right;
+    float: left;
     margin-top: 2%;
 
 }

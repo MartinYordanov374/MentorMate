@@ -81,19 +81,8 @@
                                     console.log(overlapArea)
                                     if(overlapArea>0)
                                     {
-                                        // alert('ERROR! You cannot put this widget here !')
-                                        // $('.'+classCurrentWidget.split(' ')[1]).draggable({
-                                        //     revert: true
-                                        // })
                                         console.log('collision on creation detected')
-                                        // $('.'+$(this).attr('class').split(' ')[1]).appendTo('.'+classCurrentWidget.split(' ')[1])
                                         $(this).insertAfter($('.'+classCurrentWidget.split(' ')[1]))
-                                    }
-                                    else
-                                    {
-                                        // $('.'+classCurrentWidget.split(' ')[1]).draggable({
-                                        //     revert: false
-                                        // })
                                     }
                                 }
                             })
@@ -144,18 +133,17 @@
                                             revert: false
                                         })
                                     }
-                                    // else
-                                    // {
-                                    //     $('.individualGamePanel').draggable({
-                                    //         revert: false
-                                    //     })
-                                    // }
-                                   
                                 }
                             });
 
                         }
                         
+                    })
+                })
+                $('#scoreboard').on('click', ()=>{
+                    console.log('created new scoreboard')
+                    $(`.scoreboardPanel`).draggable({
+                        containment: '.adminPanelContainer',
                     })
                 })
             }
