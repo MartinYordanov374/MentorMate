@@ -115,13 +115,19 @@
                                     overlapArea = x_overlap*y_overlap
                                     if(overlapArea>0)
                                     {
-                                        alert('ERROR! You cannot put this widget here !')
+                                        $('.'+classCurrentWidget.split(' ')[1]).css({
+                                            'border-style':'dashed',
+                                            'border-color':'red'
+                                        })
                                         $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: true
                                         })
                                     }
                                     else
                                     {
+                                        $('.'+classCurrentWidget.split(' ')[1]).css({
+                                            'border-style':'none',
+                                        })
                                         $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                             revert: false
                                         })
