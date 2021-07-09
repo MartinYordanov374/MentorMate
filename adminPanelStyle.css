@@ -48,11 +48,12 @@ body,html{
     position: relative;
 }
 .scoreboardContainer{
-    display: inline-block;
-
+    
 }
 .scoreboardPanel{
     width:400px;
     height: 350px;
     background-color:#feffbb;
+    position: absolute;
+    display: inline-block;
 }
