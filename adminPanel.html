@@ -29,7 +29,6 @@
                     </div>
                 </div>
             </div>
-            <script src='./addNewGameScript.js'></script>
             <script src='./addScoreboard.js'></script>
             <script src='./overflowDetector.js'></script>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -42,7 +41,7 @@
                 let currentLeft = undefined
                 let currentBottom = undefined
                 $('#newGame').on('click',()=>{
-                    statisticsCounter+=1
+                    gamePanelCounter+=1
                     const newElement = document.createElement('div'); // this line here creates the div element
                     newElement.draggable=true // this line here makes the div element draggable
                     newElement.className='individualGamePanel'+` ${gamePanelCounter}`; // this line gives the div element a className
@@ -60,16 +59,8 @@
                             let classCurrentWidget = $(this).attr('class')
                             let widgetNumber = classCurrentWidget.split(' ')[1]
                             let width = $(this).width()
-                            let height = $(this).height()   
-                            let xy_data={
-                                id:widgetNumber,
-                                x:x_pos,
-                                y:y_pos
-                            }         
-                            let stringified = JSON.stringify(xy_data)
-                            localStorage.setItem('XY_DATA', stringified)          
+                            let height = $(this).height()          
                             let rect1 = $(this).offset()
-
                             $('.gamesPanel').children('div').each(function () {
                                 if(widgetNumber!=$(this).attr('class').split(' ')[1])
                                 {
@@ -87,28 +78,14 @@
                         drag: function()
                         {
                         
-                            // here I am updating the data, that is sent to the JS file, which in turn changes the data for the respective gamepanel 
-                            
                             let offset = $(this).offset()
                             let x_pos = offset.left
                             let height = $(this).height()
                             let width =$(this).width()
-
                             let y_pos = offset.top
                             let classCurrentWidget = $(this).attr('class')
-                            let widgetNumber = classCurrentWidget.split(' ')[1]
-                            let xy_data={
-                                id: widgetNumber,
-                                x:x_pos,
-                                y:y_pos
-                            }         
-
+                            let widgetNumber = classCurrentWidget.split(' ')[1]                            
                             let rect1 = $(this).offset()
-
-                            let stringified = JSON.stringify(xy_data)
-                            localStorage.setItem('XY_DATA_UPDATED', stringified) 
-                            let xy_data_updated = localStorage.getItem('UPDATED_XY_DATA')
-                            
                             $('.gamesPanel').children('div').each(function () {
                                 if(widgetNumber != $(this).attr('class').split(' ')[1])
                                 {   
@@ -137,10 +114,7 @@
                                     }
                                 }
                             });
-                           
-
                         }
-                        
                     })
                 })
                 $('#scoreboard').on('click', ()=>{
@@ -230,7 +204,7 @@
                     newElement.className='individualStatisticsPanel'; // this line gives the div element a className
                     newElement.id=`${statisticsCounter}`; // this line gives the div element an ID
                     newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
-                    const newElementGrid = document.querySelector('.statisticsPanelContainer'); // this line here selectes the games panel that I'll use to append the newly created element to
+                    const newElementGrid = document.querySelector('.statisticsPanelContainer'); // this line here selectes the statistics panel that I'll use to append the newly created element to
                     newElementGrid.appendChild(newElement); // this line appends the div to the gamesPanel
                     $('.individualStatisticsPanel').draggable({
                         containment: '.adminPanelContainer',
