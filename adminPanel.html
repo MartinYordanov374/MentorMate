@@ -227,13 +227,43 @@
                     statisticsCounter+=1
                     const newElement = document.createElement('div'); // this line here creates the div element
                     newElement.draggable=true // this line here makes the div element draggable
-                    newElement.className='individualStatisticsPanel'+` ${statisticsCounter}`; // this line gives the div element a className
-                    newElement.id='individualStatisticsPanel'; // this line gives the div element an ID
+                    newElement.className='individualStatisticsPanel'; // this line gives the div element a className
+                    newElement.id=`${statisticsCounter}`; // this line gives the div element an ID
                     newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
                     const newElementGrid = document.querySelector('.statisticsPanelContainer'); // this line here selectes the games panel that I'll use to append the newly created element to
                     newElementGrid.appendChild(newElement); // this line appends the div to the gamesPanel
                     $('.individualStatisticsPanel').draggable({
-                        containment: '.adminPanelContainer'
+                        containment: '.adminPanelContainer',
+                        drag: function()
+                        {
+                            let offset = $(this).offset()
+                            let x_pos_rectangle_one = offset.left
+                            let y_pos_rectangle_one = offset.top
+                            let rect1 = $(this).offset()
+                            let firstRectangleId = $(this).attr('id')
+                            $('.statisticsPanelContainer').children('div').each(function () {
+                                let secondRectangleId = $(this).attr('id')
+                                if(firstRectangleId!=secondRectangleId)
+                                {   
+                                    let rect2 = $(this).offset()
+                                    let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                                    let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                                    let overlapArea = x_overlap*y_overlap
+                                    if(overlapArea>0)
+                                    {
+                                        $('#'+firstRectangleId).draggable({
+                                           revert: true
+                                        })
+                                    }
+                                    else
+                                    {
+                                        $('#'+firstRectangleId).draggable({
+                                           revert: false
+                                        })
+                                    }                   
+                                }
+                            })
+                        }
                     })
                 })
             }
