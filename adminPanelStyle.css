@@ -47,9 +47,7 @@ body,html{
     grid-template-columns: 1fr 1fr;
     position: relative;
 }
-.scoreboardContainer{
-    
-}
+
 .scoreboardPanel{
     width:400px;
     height: 350px;
@@ -58,7 +56,7 @@ body,html{
     display: inline-block;
 }
 .individualStatisticsPanel{
-    background-color: #feffbb;
+    background-color: #ffbc7d;
     width: 200px;
     height:200px;
     margin-top: 2%;
@@ -66,3 +64,9 @@ body,html{
     grid-template-columns: 1fr 1fr;
     position: relative;
 }
+
+.gamePanelOnCollision{
+    border-style: dashed;
+    border-color: red;
+}
+
