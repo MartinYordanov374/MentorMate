@@ -24,7 +24,9 @@
                             
                         </div>
                     </div>
+                    <div class='statisticsPanelContainer' id='statisticsPanelContainer'>
 
+                    </div>
                 </div>
             </div>
             <script src='./addNewGameScript.js'></script>
@@ -33,16 +35,17 @@
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script>
-            let elementCounter = -1
+            let gamePanelCounter = -1
+            let statisticsCounter = -1
             $(document).ready()
             {
                 let currentLeft = undefined
                 let currentBottom = undefined
                 $('#newGame').on('click',()=>{
-                    elementCounter+=1
+                    statisticsCounter+=1
                     const newElement = document.createElement('div'); // this line here creates the div element
                     newElement.draggable=true // this line here makes the div element draggable
-                    newElement.className='individualGamePanel'+` ${elementCounter}`; // this line gives the div element a className
+                    newElement.className='individualGamePanel'+` ${gamePanelCounter}`; // this line gives the div element a className
                     newElement.id='individualGamePanel'; // this line gives the div element an ID
                     newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
                     const newElementGrid = document.querySelector('.gamesPanel'); // this line here selectes the games panel that I'll use to append the newly created element to
@@ -108,7 +111,7 @@
                             
                             $('.gamesPanel').children('div').each(function () {
                                 if(widgetNumber != $(this).attr('class').split(' ')[1])
-                                {
+                                {   
                                     let rect2 = $(this).offset()
                                     x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
                                     y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
@@ -202,7 +205,6 @@
                                     let overlapArea = x_overlap*y_overlap
                                     if(overlapArea>0)
                                     {
-                                        console.log('collision detected')
                                         $('#'+firstRectangleId).draggable({
                                            revert: true
                                         })
@@ -212,15 +214,26 @@
                                         $('#'+firstRectangleId).draggable({
                                            revert: false
                                         })
-                                    }
-
-
-                                                        
+                                    }                   
                                 }
 
 
                             })
                         }
+                    })
+                })
+                //200x200 statistics widget, draggable, collidable with other statistics widgets
+                $('#statistics').on('click', ()=>{
+                    statisticsCounter+=1
+                    const newElement = document.createElement('div'); // this line here creates the div element
+                    newElement.draggable=true // this line here makes the div element draggable
+                    newElement.className='individualStatisticsPanel'+` ${statisticsCounter}`; // this line gives the div element a className
+                    newElement.id='individualStatisticsPanel'; // this line gives the div element an ID
+                    newElement.style.position = 'relative' // this line gives the div element the position attributes of relative
+                    const newElementGrid = document.querySelector('.statisticsPanelContainer'); // this line here selectes the games panel that I'll use to append the newly created element to
+                    newElementGrid.appendChild(newElement); // this line appends the div to the gamesPanel
+                    $('.individualStatisticsPanel').draggable({
+                        containment: '.adminPanelContainer'
                     })
                 })
             }
