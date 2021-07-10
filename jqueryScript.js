@@ -2,9 +2,6 @@ let gamePanelCounter = -1
 let statisticsCounter = -1
 $(document).ready()
 {
-
-    let currentLeft = undefined
-    let currentBottom = undefined
     $('#newGame').on('click',()=>
     {
         createGamePanel()
@@ -17,8 +14,6 @@ $(document).ready()
             create: function()
             {
                 let offset = $(this).offset()
-                let x_pos_rectangle_one = offset.left
-                let y_pos_rectangle_one = offset.top
                 let rect1 = $(this).offset()
                 let firstRectangleId = $(this).attr('id')
                 $('.scoreboardContainer').children('div').each(function () {
@@ -44,19 +39,9 @@ $(document).ready()
                     }
                 })
             },
-            start: function()
-            {
-                // console.log('Drag started')
-            },
-            stop: function()
-            {
-                // console.log('Drag ended')
-            },
             drag: function()
             {
                 let offset = $(this).offset()
-                let x_pos_rectangle_one = offset.left
-                let y_pos_rectangle_one = offset.top
                 let rect1 = $(this).offset()
                 let firstRectangleId = $(this).attr('id')
                 $('.scoreboardContainer').children('div').each(function () {
@@ -122,12 +107,8 @@ $(document).ready()
             create: function()
             {
                 let offset = $(this).offset()
-                let x_pos = offset.left
-                let y_pos = offset.top
                 let classCurrentWidget = $(this).attr('class')
-                let widgetNumber = classCurrentWidget.split(' ')[1]
-                let width = $(this).width()
-                let height = $(this).height()          
+                let widgetNumber = classCurrentWidget.split(' ')[1]         
                 let rect1 = $(this).offset()
                 $('.gamesPanel').children('div').each(function () {
                     if(widgetNumber!=$(this).attr('class').split(' ')[1])
@@ -147,10 +128,6 @@ $(document).ready()
             {
             
                 let offset = $(this).offset()
-                let x_pos = offset.left
-                let height = $(this).height()
-                let width =$(this).width()
-                let y_pos = offset.top
                 let classCurrentWidget = $(this).attr('class')
                 let widgetNumber = classCurrentWidget.split(' ')[1]                            
                 let rect1 = $(this).offset()
@@ -189,9 +166,6 @@ $(document).ready()
             containment: '.adminPanelContainer',
             drag: function()
             {
-                let offset = $(this).offset()
-                let x_pos_rectangle_one = offset.left
-                let y_pos_rectangle_one = offset.top
                 let rect1 = $(this).offset()
                 let firstRectangleId = $(this).attr('id')
                 $('.statisticsPanelContainer').children('div').each(function () {
