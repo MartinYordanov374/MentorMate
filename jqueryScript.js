@@ -13,7 +13,6 @@ $(document).ready()
             containment: '.adminPanelContainer',
             create: function()
             {
-                let offset = $(this).offset()
                 let rect1 = $(this).offset()
                 let firstRectangleId = $(this).attr('id')
                 $('.scoreboardContainer').children('div').each(function () {
@@ -41,7 +40,6 @@ $(document).ready()
             },
             drag: function()
             {
-                let offset = $(this).offset()
                 let rect1 = $(this).offset()
                 let firstRectangleId = $(this).attr('id')
                 $('.scoreboardContainer').children('div').each(function () {
@@ -106,7 +104,6 @@ $(document).ready()
             containment: '.adminPanelContainer', // this line permits the movement of the dragged elements outside of the admin panel
             create: function()
             {
-                let offset = $(this).offset()
                 let classCurrentWidget = $(this).attr('class')
                 let widgetNumber = classCurrentWidget.split(' ')[1]         
                 let rect1 = $(this).offset()
