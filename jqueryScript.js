@@ -24,7 +24,6 @@ $(document).ready()
 
                         if(overlapArea>0)
                         {
-                            console.log('overlapping scoreboards on creation!')
                             $('#'+firstRectangleId).animate({
                                 'top':'55px', 
                                 'left':'560px' 
@@ -117,17 +116,7 @@ $(document).ready()
                         }
                     }
                 })
-                $('.scoreboardContainer').children('div').each(function () {
-                    let rect2 = $(this).offset()
 
-                    let overlapArea = calculateOverlapArea(rect1,rect2)
-                    let scoreboardWidget_ID = $(this).attr('id')
-                    if(overlapArea>0)
-                    {
-                        console.log('collision on creation !!!')
-                        $('.'+classCurrentWidget.split(' ')[1]).insertAfter($('#'+scoreboardWidget_ID))
-                    }
-                })
             },
             drag: function()
             {
