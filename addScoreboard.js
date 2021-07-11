@@ -15,7 +15,7 @@ addScoreboardButton.addEventListener('click',(event)=>{
 
             let scoreboard = document.createElement('DIV')
             scoreboard.className='scoreboardPanel'
-            scoreboard.id=`${scoreBoardCounter}`
+            scoreboard.id=`scoreboard_${scoreBoardCounter}`
             document.getElementById('scoreboardContainer').appendChild(scoreboard)
         }
     }
@@ -30,7 +30,7 @@ addScoreboardButton.addEventListener('click',(event)=>{
         {
             let scoreboard = document.createElement('DIV')
             scoreboard.className='scoreboardPanel'
-            scoreboard.id=`${scoreBoardCounter}`
+            scoreboard.id=`scoreboard_${scoreBoardCounter}`
             document.getElementById('scoreboardContainer').appendChild(scoreboard)
         }
     }
