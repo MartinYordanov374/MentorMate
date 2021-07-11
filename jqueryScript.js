@@ -248,9 +248,7 @@ $(document).ready()
                 })
                 // collision with scoreboard panels
                 $('.scoreboardContainer').children('div').each(function(){
-                    let scoreboardRectangle_ID = $(this).attr('id')
-                    if(statisticsRectangle_ID!=scoreboardRectangle_ID)
-                    {
+
                         let rect2 = $(this).offset()
                         let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
                         let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
@@ -270,11 +268,30 @@ $(document).ready()
                             })
 
                         }
+                }) 
+                $('.gamesPanel').children('div').each(function (){
+                    let rect2 = $(this).offset()
+                    let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                    let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                    let overlapArea = x_overlap*y_overlap
+                    if(overlapArea>0)
+                    {
+                        $('#'+statisticsRectangle_ID).addClass('gamePanelOnCollision')
+                        $('#'+statisticsRectangle_ID).draggable({
+                            revert: true
+                        })
                     }
-
-                
-            }) 
+                    else
+                    {
+                        $('#'+statisticsRectangle_ID).removeClass('gamePanelOnCollision')
+                        $('#'+statisticsRectangle_ID).draggable({
+                            revert: false
+                        })
+                    }
+                    
+                })
             }
+            
         })
     }
 }
