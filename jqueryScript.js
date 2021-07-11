@@ -167,18 +167,50 @@ $(document).ready()
                                     revert: true
                                 })
                             }
-                            if(overlapArea<=0)
-                            {
-                                $('.'+classCurrentWidget.split(' ')[1]).removeClass('gamePanelOnCollision')
-    
-                                $('.'+classCurrentWidget.split(' ')[1]).draggable({
-                                    revert: false
-                                })
-                            }
+                        }
+                        if(overlapArea<=0)
+                        {
+                            $('.'+classCurrentWidget.split(' ')[1]).removeClass('gamePanelOnCollision')
+
+                            $('.'+classCurrentWidget.split(' ')[1]).draggable({
+                                revert: false
+                            })
                         }
 
                     }
+                
                 });
+                $('.scoreboardContainer').children('div').each(function(){
+                    if(widgetNumber != $(this).attr('id'))
+                    {
+                        let rect2 = $(this).offset()
+                        x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        overlapArea = x_overlap*y_overlap
+                        if(overlapArea>0)
+                        {
+                            if(overlapArea>0)
+                            {
+                                $('.'+classCurrentWidget.split(' ')[1]).addClass('gamePanelOnCollision')
+                                $('.'+classCurrentWidget.split(' ')[1]).draggable({
+                                    revert: true
+                                })
+                                console.log('collision')
+                            }
+                        }
+                        if(overlapArea<=0)
+                        {
+                            $('.'+classCurrentWidget.split(' ')[1]).removeClass('gamePanelOnCollision')
+
+                            $('.'+classCurrentWidget.split(' ')[1]).draggable({
+                                revert: false
+                            })
+                            console.log('no collision')
+
+                        }
+
+                    }
+                }) 
             }
         })
         
