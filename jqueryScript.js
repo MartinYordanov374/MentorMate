@@ -152,8 +152,7 @@ $(document).ready()
                     }
                 });
                 $('.statisticsPanelContainer').children('div').each(function () {
-                    if(widgetNumber != $(this).attr('id'))
-                    {
+
                         let rect2 = $(this).offset()
                         x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
                         y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
@@ -177,12 +176,11 @@ $(document).ready()
                             })
                         }
 
-                    }
+                    
                 
                 });
                 $('.scoreboardContainer').children('div').each(function(){
-                    if(widgetNumber != $(this).attr('id'))
-                    {
+
                         let rect2 = $(this).offset()
                         x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
                         y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
@@ -209,7 +207,7 @@ $(document).ready()
 
                         }
 
-                    }
+                    
                 }) 
             }
         })
