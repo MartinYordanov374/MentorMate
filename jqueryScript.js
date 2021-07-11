@@ -24,14 +24,8 @@ $(document).ready()
 
                         if(overlapArea>0)
                         {
-                            $('#'+firstRectangleId).animate({
-                                'top':'55px', 
-                                'left':'560px' 
-                            })
-                            $('#'+secondRectangleId).animate({
-                                'top':'55px', 
-                                'left':'159px' 
-                            })
+                            $('#'+secondRectangleId).insertAfter('#'+firstRectangleId)
+
                         }
                     }
                 })

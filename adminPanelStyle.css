@@ -47,7 +47,6 @@ body,html{
     grid-template-columns: 1fr 1fr;
     position: relative;
 }
-
 .scoreboardPanel{
     width:400px;
     height: 350px;
