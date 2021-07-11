@@ -102,7 +102,9 @@ $(document).ready()
                     if(widgetNumber!=$(this).attr('class').split(' ')[1])
                     {
                         let rect2 = $(this).offset()
-                        let overlapArea = calculateOverlapArea(rect1,rect2)
+                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        let overlapArea = x_overlap*y_overlap
 
                         if(overlapArea>0)
                         {
@@ -121,7 +123,9 @@ $(document).ready()
                     if(widgetNumber != $(this).attr('class').split(' ')[1])
                     {   
                         let rect2 = $(this).offset()
-                        let overlapArea = calculateOverlapArea(rect1,rect2)
+                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        let overlapArea = x_overlap*y_overlap
 
                         if(overlapArea>0)
                         {
@@ -144,7 +148,9 @@ $(document).ready()
                 $('.statisticsPanelContainer').children('div').each(function () {
 
                         let rect2 = $(this).offset()
-                        let overlapArea = calculateOverlapArea(rect1,rect2)
+                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        let overlapArea = x_overlap*y_overlap
 
                         if(overlapArea>0)
                         {
@@ -171,18 +177,18 @@ $(document).ready()
                 $('.scoreboardContainer').children('div').each(function(){
 
                         let rect2 = $(this).offset()
-                        let overlapArea = calculateOverlapArea(rect1,rect2)
-
+                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        let overlapArea = x_overlap*y_overlap
                         if(overlapArea>0)
                         {
-                            if(overlapArea>0)
-                            {
+                
                                 $('.'+classCurrentWidget.split(' ')[1]).addClass('gamePanelOnCollision')
                                 $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                     revert: true
                                 })
                                 console.log('collision')
-                            }
+                            
                         }
                         if(overlapArea<=0)
                         {
@@ -217,7 +223,9 @@ $(document).ready()
                     if(firstRectangleId!=secondRectangleId)
                     {   
                         let rect2 = $(this).offset()
-                        let overlapArea = calculateOverlapArea(rect1,rect2)
+                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                        let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                        let overlapArea = x_overlap*y_overlap
                         if(overlapArea>0)
                         {
                             $('#'+firstRectangleId).draggable({
@@ -257,7 +265,9 @@ $(document).ready()
                 }) 
                 $('.gamesPanel').children('div').each(function (){
                     let rect2=$(this).offset()
-                    let overlapArea = calculateOverlapArea(rect1,rect2)
+                    let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
+                    let y_overlap = Math.max(0, Math.min(rect2.top+$(this).height(), rect1.top+$(this).height()) - Math.max(rect1.top, rect2.top));
+                    let overlapArea = x_overlap*y_overlap
                     if(overlapArea>0)
                     {
                         $('#'+statisticsRectangle_ID).addClass('gamePanelOnCollision')
@@ -277,12 +287,5 @@ $(document).ready()
             }
             
         })
-    }
-    function calculateOverlapArea(firstRectangle, secondRectangle)
-    {
-        let x_overlap = Math.max(0, Math.min(firstRectangle.left+$(this).width(), secondRectangle.left+$(this).width()) - Math.max(firstRectangle.left, firstRectangle.left));
-        let y_overlap = Math.max(0, Math.min(firstRectangle.top+$(this).height(), firstRectangle.top+$(this).height()) - Math.max(firstRectangle.top, firstRectangle.top));
-        let overlapArea = x_overlap*y_overlap
-        return overlapArea
     }
 }
