@@ -20,9 +20,8 @@ $(document).ready()
                     if(firstRectangleId!=secondRectangleId)
                     {
                         let rect2 = $(this).offset()
-                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
-                        let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
-                        let overlapArea = x_overlap*y_overlap
+                        let overlapArea = calculateOverlapArea(rect1,rect2)
+
                         if(overlapArea>0)
                         {
                             console.log('overlapping scoreboards on creation!')
@@ -47,9 +46,8 @@ $(document).ready()
                     if(firstRectangleId!=secondRectangleId)
                     {
                         let rect2 = $(this).offset()
-                        let x_overlap = Math.max(0, Math.min(rect1.left+$(this).width(), rect2.left+$(this).width()) - Math.max(rect1.left, rect2.left));
-                        let y_overlap = Math.max(0, Math.min(rect1.top+$(this).height(), rect2.top+$(this).height()) - Math.max(rect1.top, rect2.top));
-                        let overlapArea = x_overlap*y_overlap
+                        let overlapArea = calculateOverlapArea(rect1,rect2)
+
                         if(overlapArea>0)
                         {
                             $('#'+firstRectangleId).draggable({
