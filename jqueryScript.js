@@ -85,6 +85,29 @@ $(document).ready()
                         })
                     }
                 })
+                $('.gamesPanel').children('div').each(function(){
+                    let rect2=$(this).offset()
+                    let rect2_width = $(this).width()
+                    let rect2_height = $(this).height()
+                    let x_overlap = Math.max(0, Math.min(rect1.left+rect1_width, rect2.left+rect2_width) - Math.max(rect1.left, rect2.left));
+                    let y_overlap = Math.max(0, Math.min(rect2.top+rect2_height, rect1.top+rect1_height) - Math.max(rect1.top, rect2.top));
+                    let overlapArea = x_overlap*y_overlap
+                    if(overlapArea>0)
+                    {
+                        $('#'+firstRectangleId).addClass('gamePanelOnCollision')
+                        $('#'+firstRectangleId).draggable({
+                            revert: true
+                        })
+                    }
+                    else
+                    {
+                        $('#'+firstRectangleId).removeClass('gamePanelOnCollision')
+
+                        $('#'+firstRectangleId).draggable({
+                            revert: false
+                        })
+                    }
+                })
 
             }
         })
@@ -218,7 +241,6 @@ $(document).ready()
                                 $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                     revert: true
                                 })
-                                console.log('collision')
                             
                         }
                         if(overlapArea<=0)
@@ -228,7 +250,6 @@ $(document).ready()
                             $('.'+classCurrentWidget.split(' ')[1]).draggable({
                                 revert: false
                             })
-                            console.log('no collision')
 
                         }
 
