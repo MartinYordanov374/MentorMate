@@ -52,7 +52,7 @@ body,html{
     width:400px;
     height: 350px;
     background-color:#feffbb;
-    position: absolute;
+    position: relative;
     display: inline-block;
 }
 .individualStatisticsPanel{

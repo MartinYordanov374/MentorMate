@@ -108,12 +108,24 @@ $(document).ready()
                 $('.gamesPanel').children('div').each(function () {
                     if(widgetNumber!=$(this).attr('class').split(' ')[1])
                     {
+                        let rect2 = $(this).offset()
                         let overlapArea = calculateOverlapArea(rect1,rect2)
 
                         if(overlapArea>0)
                         {
                             $(this).insertAfter($('.'+classCurrentWidget.split(' ')[1]))
                         }
+                    }
+                })
+                $('.scoreboardContainer').children('div').each(function () {
+                    let rect2 = $(this).offset()
+
+                    let overlapArea = calculateOverlapArea(rect1,rect2)
+                    let scoreboardWidget_ID = $(this).attr('id')
+                    if(overlapArea>0)
+                    {
+                        console.log('collision on creation !!!')
+                        $('.'+classCurrentWidget.split(' ')[1]).insertAfter($('#'+scoreboardWidget_ID))
                     }
                 })
             },
