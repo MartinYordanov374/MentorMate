@@ -23,11 +23,11 @@ namespace Debugging_Practice
 
         public Business(string businessFieldOfWork, double businessTotalAssets, double businessTotalLiabilities, double businessWorkingCapital, double businessGoodwill)
         {
-            this.IndustrySector=businessFieldOfWork;
-            this.TotalAssets=businessTotalAssets;
-            this.TotalLiabilities=businessTotalLiabilities;
-            this.WorkingCapital=businessWorkingCapital;
-            this.Goodwill=businessGoodwill;
+            this.IndustrySector = businessFieldOfWork;
+            this.TotalAssets = businessTotalAssets;
+            this.TotalLiabilities = businessTotalLiabilities;
+            this.WorkingCapital = businessWorkingCapital;
+            this.Goodwill = businessGoodwill;
         }
         public void showBusinessData()
         {
