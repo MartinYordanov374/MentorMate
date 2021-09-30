@@ -15,8 +15,6 @@ namespace Debugging_Practice
         // this field represents the equivalent of the assets of an acquired business e.g. -> intellectual property, brands etc.
         private double goodwill; 
 
-
-
         public string IndustrySector { get; set; }
         public double TotalAssets { get; set; }
         public double TotalLiabilities { get; set; }
@@ -39,9 +37,6 @@ namespace Debugging_Practice
             Console.WriteLine($"\tTotal Liabilities: {TotalLiabilities}");
             Console.WriteLine($"\tTotal Working Capital: {WorkingCapital}");
             Console.WriteLine($"\tTotal Goodwill: {Goodwill}");
-
-
-            
         }
     }
 }
