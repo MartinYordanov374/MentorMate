@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice.deps.json
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice.runtimeconfig.json
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice.dll
+/media/martin/HDD/mentormate/Debugging Practice/bin/Debug/netcoreapp3.1/Debugging Practice.pdb
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.dll
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.pdb
+/media/martin/HDD/mentormate/Debugging Practice/obj/Debug/netcoreapp3.1/Debugging Practice.genruntimeconfig.cache
