@@ -20,10 +20,10 @@ namespace Debugging_Practice
            Console.WriteLine("Enter business goodwill");
            double totalBusinessGoodwill = double.Parse(Console.ReadLine());
 
-           double totalBusinessWorkingCapital=totalBusinessAssets-totalBusinessLiabilities;
+           double totalBusinessWorkingCapital = totalBusinessAssets-totalBusinessLiabilities;
 
-           Business businessObject = new Business(businessSector,totalBusinessAssets,totalBusinessLiabilities,totalBusinessWorkingCapital,totalBusinessGoodwill);
-           businessObject.showBusinessData();
+           Business businessObject = new Business(businessSector, totalBusinessAssets, totalBusinessLiabilities, totalBusinessWorkingCapital, totalBusinessGoodwill);
+           businessObject.ShowBusinessData();
         }
     }
 }
