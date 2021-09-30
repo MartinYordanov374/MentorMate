@@ -22,7 +22,7 @@ namespace Debugging_Practice
 
            double totalBusinessWorkingCapital = totalBusinessAssets-totalBusinessLiabilities;
 
-           Business businessObject = new Business(businessSector, totalBusinessAssets, totalBusinessLiabilities, totalBusinessWorkingCapital, totalBusinessGoodwill);
+           Business business = new Business(businessSector, totalBusinessAssets, totalBusinessLiabilities, totalBusinessWorkingCapital, totalBusinessGoodwill);
            businessObject.ShowBusinessData();
         }
     }
