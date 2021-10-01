@@ -26,6 +26,7 @@ namespace SortNumbers
             {
                 return false;
             }
+            
             return true;
 
         }
@@ -60,7 +61,7 @@ namespace SortNumbers
                 }
             }
 
-            foreach (var item in numbersArray)
+            foreach (double item in numbersArray)
             {
                 Console.WriteLine(item);
             }
