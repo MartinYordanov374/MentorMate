@@ -34,13 +34,15 @@ namespace FakeZodiac
             int condensed = condenseNumber(sumOfAllNameCharacters);
 
             int lastDigitOfTotalNameSum = sumOfAllNameCharacters % 10;
-            Console.WriteLine($"Your complete name length is {sumOfAllNameCharacters} which is the condensed number of {condensed}. It means that {interpretations[lastDigitOfTotalNameSum-1]}");
+            int firstDigitOfTotalNameSum = sumOfAllNameCharacters / 10;
+            System.Console.WriteLine(firstDigitOfTotalNameSum);
+            Console.WriteLine($"Your complete name length is {sumOfAllNameCharacters}. {firstDigitOfTotalNameSum} + {lastDigitOfTotalNameSum} gives us the number of {condensed}. It means that {interpretations[lastDigitOfTotalNameSum-1]}");
 
             int dateSum = yearOfBirth+monthOfBirth+dayOfBirth;
 
             int lastNumberOfDateSum = dateSum % 10; 
             
-            Console.WriteLine($"Your day of birth sum is {dateSum}. It means that {interpretations[lastNumberOfDateSum]}");
+            Console.WriteLine($"Your day of birth sum is {dateSum}. It means that {interpretations[lastNumberOfDateSum-1]}");
         }
         static int condenseNumber(int number)
         {
