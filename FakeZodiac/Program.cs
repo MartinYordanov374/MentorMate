@@ -33,56 +33,9 @@ namespace FakeZodiac
             int sumOfAllNameCharacters = firstName.Length+secondName.Length+lastName.Length;
             int condensed = condenseNumber(sumOfAllNameCharacters);
 
-            Console.WriteLine($"Your complete name length is {sumOfAllNameCharacters} which is the condensed number of {condensed}. It means that ");
-            
-            switch(condensed)
-            {
-                case 1:
-                {
-                    Console.Write(interpretations[0]+"\n");
-                    break;
-                }
-                case 2:
-                {
-                    Console.Write(interpretations[1]+"\n");
-                    break;
-                }
-                case 3:
-                {
-                    Console.Write(interpretations[2]+"\n");
-                    break;
-                }
-                case 4:
-                {     
-                    Console.Write(interpretations[3]+"\n");
-                    break;
-                }
-                case 5:
-                {
-                    Console.Write(interpretations[4]+"\n");
-                    break;
-                }
-                case 6:
-                {
-                    Console.Write(interpretations[5]+"\n");
-                    break;
-                }
-                case 7:
-                {
-                    Console.Write(interpretations[6]+"\n");
-                    break;
-                }
-                case 8:
-                {
-                    Console.Write(interpretations[7]+"\n");
-                    break;
-                }
-                case 9:
-                {
-                    Console.Write(interpretations[8]+"\n");
-                    break;
-                }
-            }
+            int lastDigitOfTotalNameSum = sumOfAllNameCharacters % 10;
+            System.Console.WriteLine(lastDigitOfTotalNameSum);
+            Console.WriteLine($"Your complete name length is {sumOfAllNameCharacters} which is the condensed number of {condensed}. It means that {interpretations[lastDigitOfTotalNameSum-1]}");
 
             int dateSum = yearOfBirth+monthOfBirth+dayOfBirth;
 
@@ -93,7 +46,7 @@ namespace FakeZodiac
         static int condenseNumber(int number)
         {
 
-            if(number < 10)
+            if(number >= 1 && number <= 9)
             {
                 return number;
             }
