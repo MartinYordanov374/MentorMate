@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/martin/HDD/mentormate/FakeZodiac/FakeZodiac.csproj": {}
+  },
+  "projects": {
+    "/media/martin/HDD/mentormate/FakeZodiac/FakeZodiac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/martin/HDD/mentormate/FakeZodiac/FakeZodiac.csproj",
+        "projectName": "FakeZodiac",
+        "projectPath": "/media/martin/HDD/mentormate/FakeZodiac/FakeZodiac.csproj",
+        "packagesPath": "/home/martin/.nuget/packages/",
+        "outputPath": "/media/martin/HDD/mentormate/FakeZodiac/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/martin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.409/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

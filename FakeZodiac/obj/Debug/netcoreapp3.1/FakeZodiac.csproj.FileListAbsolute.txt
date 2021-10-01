@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.AssemblyInfo.cs
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac.deps.json
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac.runtimeconfig.json
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac.dll
+/media/martin/HDD/mentormate/FakeZodiac/bin/Debug/netcoreapp3.1/FakeZodiac.pdb
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.dll
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.pdb
+/media/martin/HDD/mentormate/FakeZodiac/obj/Debug/netcoreapp3.1/FakeZodiac.genruntimeconfig.cache
