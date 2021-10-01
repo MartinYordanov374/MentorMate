@@ -35,6 +35,7 @@ namespace FakeZodiac
 
             int lastDigitOfTotalNameSum = sumOfAllNameCharacters % 10;
             int firstDigitOfTotalNameSum = sumOfAllNameCharacters / 10;
+            
             System.Console.WriteLine(firstDigitOfTotalNameSum);
             Console.WriteLine($"Your complete name length is {sumOfAllNameCharacters}. {firstDigitOfTotalNameSum} + {lastDigitOfTotalNameSum} gives us the number of {condensed}. It means that {interpretations[lastDigitOfTotalNameSum-1]}");
 
