@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Debugging_Practice
 {
@@ -6,24 +7,27 @@ namespace Debugging_Practice
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("NUMBERS IN BILLIONS");
-
-           Console.WriteLine("Enter business industry");
-           string businessSector = Console.ReadLine();
-
-           Console.WriteLine("Enter business assets");
-           double totalBusinessAssets = double.Parse(Console.ReadLine());
-
-           Console.WriteLine("Enter business liabilities");
-           double totalBusinessLiabilities = double.Parse(Console.ReadLine());
-
-           Console.WriteLine("Enter business goodwill");
-           double totalBusinessGoodwill = double.Parse(Console.ReadLine());
-
-           double totalBusinessWorkingCapital=totalBusinessAssets-totalBusinessLiabilities;
-
-           Business businessObject = new Business(businessSector,totalBusinessAssets,totalBusinessLiabilities,totalBusinessWorkingCapital,totalBusinessGoodwill);
-           businessObject.showBusinessData();
+          decimal input = decimal.Parse(Console.ReadLine());
+          
+          if(input==1)
+          {
+              System.Console.WriteLine(0);
+          }
+          else
+          {
+            decimal fraction = 1/input;
+            
+            var result = fraction.ToString().Split(".")[1];
+            var convertedResultToArray = result;
+                if(convertedResultToArray.Distinct().Count()<=convertedResultToArray.Length)
+                {
+                    System.Console.WriteLine(convertedResultToArray.Length);
+                }
+                else
+                {
+                    System.Console.WriteLine("NO");
+                }
+          }
         }
     }
 }
