@@ -10,7 +10,7 @@ namespace SortNumbers
             double[] numbersArray = new double[3];
             for(int i =0;i<3;i++)
             {
-                double currNumber = promptNumber();
+                double currNumber = PromptNumber();
                 numbersArray[i] = currNumber;
             }
             Console.WriteLine("END OF PROMPT");
@@ -30,14 +30,14 @@ namespace SortNumbers
             return true;
         }
         
-        static double promptNumber()
+        static double PromptNumber()
         {
             Console.WriteLine("Enter your number: ");
             double number = double.Parse(Console.ReadLine());
             if(!CheckIntervalValidity(number))
             {
                 Console.WriteLine($"{number} is an invalid number. Please try again with a number in the following interval -> [-99.99 - 99.99]");
-                number = promptNumber();
+                number = PromptNumber();
             }
             return number;
         }
