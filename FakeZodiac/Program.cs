@@ -31,7 +31,7 @@ namespace FakeZodiac
             int dayOfBirth = int.Parse(Console.ReadLine());
 
             int sumOfAllNameCharacters = firstName.Length + secondName.Length + lastName.Length;
-            int condensed = condenseNumber(sumOfAllNameCharacters);
+            int condensed = CondenseNumber(sumOfAllNameCharacters);
 
             int lastDigitOfTotalNameSum = sumOfAllNameCharacters % 10;
             int firstDigitOfTotalNameSum = sumOfAllNameCharacters / 10;
@@ -44,7 +44,7 @@ namespace FakeZodiac
             
             Console.WriteLine($"Your day of birth sum is {dateSum}. It means that {interpretations[lastNumberOfDateSum-1]}");
         }
-        static int condenseNumber(int number)
+        static int CondenseNumber(int number)
         {
 
             if(number >= 1 && number <= 9)
@@ -52,7 +52,7 @@ namespace FakeZodiac
                 return number;
             }
 
-            return condenseNumber(number / 10) + number % 10;
+            return CondenseNumber(number / 10) + number % 10;
         }
     }
 }
