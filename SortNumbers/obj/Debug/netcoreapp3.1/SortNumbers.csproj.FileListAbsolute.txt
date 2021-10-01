@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.AssemblyInfo.cs
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers.deps.json
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers.runtimeconfig.json
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers.dll
+/media/martin/HDD/mentormate/SortNumbers/bin/Debug/netcoreapp3.1/SortNumbers.pdb
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.dll
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.pdb
+/media/martin/HDD/mentormate/SortNumbers/obj/Debug/netcoreapp3.1/SortNumbers.genruntimeconfig.cache
