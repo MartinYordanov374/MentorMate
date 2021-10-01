@@ -30,7 +30,7 @@ namespace FakeZodiac
             Console.WriteLine("Enter your day of birth: ");
             int dayOfBirth = int.Parse(Console.ReadLine());
 
-            int sumOfAllNameCharacters = firstName.Length+secondName.Length+lastName.Length;
+            int sumOfAllNameCharacters = firstName.Length + secondName.Length + lastName.Length;
             int condensed = condenseNumber(sumOfAllNameCharacters);
 
             int lastDigitOfTotalNameSum = sumOfAllNameCharacters % 10;
