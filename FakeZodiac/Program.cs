@@ -50,7 +50,9 @@ namespace FakeZodiac
 
             if(number >= 1 && number <= 9)
             {
+
                 return number;
+                
             }
 
             return CondenseNumber(number / 10) + number % 10;
