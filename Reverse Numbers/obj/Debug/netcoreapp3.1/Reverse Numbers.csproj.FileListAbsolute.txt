@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers.deps.json
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers.runtimeconfig.json
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers.dll
+/media/martin/HDD/mentormate/Reverse Numbers/bin/Debug/netcoreapp3.1/Reverse Numbers.pdb
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.dll
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.pdb
+/media/martin/HDD/mentormate/Reverse Numbers/obj/Debug/netcoreapp3.1/Reverse Numbers.genruntimeconfig.cache
