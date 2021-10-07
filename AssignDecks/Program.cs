@@ -10,8 +10,7 @@ namespace AssignDecks
             List<string> cardDeck = new List<string>();
 
             cardDeck = CreateDeck();
-
-
+            
             string[] shuffledDeck = ShuffleDeck(cardDeck);
             
             string[] randomThirteenCards = GetRandomThirteenCards(shuffledDeck);
@@ -21,8 +20,6 @@ namespace AssignDecks
             string[] thirdPlayerDeck = shuffledDeck.Skip(26).Take(13).ToArray();
             string[] fourthPlayerDeck = shuffledDeck.Skip(39).Take(13).ToArray();
 
-                
-            
             ShowPlayerDecks(firstPlayerDeck, secondPlayerDeck, thirdPlayerDeck, fourthPlayerDeck);
             
         }
