@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String.deps.json
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String.runtimeconfig.json
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String.dll
+/media/martin/HDD/mentormate/Reverse String/bin/Debug/netcoreapp3.1/Reverse String.pdb
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.dll
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.pdb
+/media/martin/HDD/mentormate/Reverse String/obj/Debug/netcoreapp3.1/Reverse String.genruntimeconfig.cache
