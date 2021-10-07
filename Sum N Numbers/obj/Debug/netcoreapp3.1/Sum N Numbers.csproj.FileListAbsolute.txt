@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers.deps.json
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers.runtimeconfig.json
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers.dll
+/media/martin/HDD/mentormate/Sum N Numbers/bin/Debug/netcoreapp3.1/Sum N Numbers.pdb
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.dll
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.pdb
+/media/martin/HDD/mentormate/Sum N Numbers/obj/Debug/netcoreapp3.1/Sum N Numbers.genruntimeconfig.cache
