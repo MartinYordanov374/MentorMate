@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes.deps.json
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes.runtimeconfig.json
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes.dll
+/media/martin/HDD/mentormate/Palyndromes/bin/Debug/netcoreapp3.1/Palyndromes.pdb
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.dll
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.pdb
+/media/martin/HDD/mentormate/Palyndromes/obj/Debug/netcoreapp3.1/Palyndromes.genruntimeconfig.cache
