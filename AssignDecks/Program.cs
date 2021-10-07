@@ -9,53 +9,27 @@ namespace AssignDecks
         {
             List<string> cardDeck = new List<string>();
 
-            cardDeck = CreateDeck(cardDeck);
+            cardDeck = CreateDeck();
 
-            string[] firstPlayerDeck = new string[13];
-            string[] secondPlayerDeck = new string[13];
-            string[] thirdPlayerDeck = new string[13];
-            string[] fourthPlayerDeck = new string[13];
 
-            for(int i = 1; i <= 4; i++)
-            {
-                string[] shuffledDeck = ShuffleDeck(cardDeck);
+            string[] shuffledDeck = ShuffleDeck(cardDeck);
+            
+            string[] randomThirteenCards = GetRandomThirteenCards(shuffledDeck);
+            cardDeck = RemoveCardsFromInitialDeck(cardDeck,randomThirteenCards);
+            string[] firstPlayerDeck = shuffledDeck.Take(13).ToArray();
+            string[] secondPlayerDeck = shuffledDeck.Skip(13).Take(13).ToArray();
+            string[] thirdPlayerDeck = shuffledDeck.Skip(26).Take(13).ToArray();
+            string[] fourthPlayerDeck = shuffledDeck.Skip(39).Take(13).ToArray();
+
                 
-                string[] randomThirteenCards = GetRandomThirteenCards(shuffledDeck);
-
-                cardDeck = RemoveCardsFromInitialDeck(cardDeck,randomThirteenCards);
-
-                switch(i)
-                {
-                    case 1:
-                    {
-                        randomThirteenCards.CopyTo(firstPlayerDeck,0);
-                        break;
-                    }
-
-                    case 2:
-                    {
-                        randomThirteenCards.CopyTo(secondPlayerDeck,0);
-                        break;
-                    }
-
-                    case 3:
-                    {
-                        randomThirteenCards.CopyTo(thirdPlayerDeck,0);
-                        break;
-                    }
-                    case 4:
-                    {
-                        randomThirteenCards.CopyTo(fourthPlayerDeck,0);
-                        break;
-                    }
-                }
-            }
+            
             ShowPlayerDecks(firstPlayerDeck, secondPlayerDeck, thirdPlayerDeck, fourthPlayerDeck);
             
         }
         // this is just in case I want something to be changed, like a deck with extra cards and such
-        static List<string> CreateDeck(List<string> allCardsArray)
+        static List<string> CreateDeck()
         {
+            List<string> allCardsArray = new List<string>();
             string[] faces = new string[]{"2","3","4","5","6","7","8", "9", "10", "J", "Q", "K", "A"};
             string[] suits = new string[]{"Spade","Heart","Club","Diamond"};
  
