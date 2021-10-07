@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks.deps.json
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks.runtimeconfig.json
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks.dll
+/media/martin/HDD/mentormate/AssignDecks/bin/Debug/netcoreapp3.1/AssignDecks.pdb
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.AssemblyInfo.cs
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.dll
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.pdb
+/media/martin/HDD/mentormate/AssignDecks/obj/Debug/netcoreapp3.1/AssignDecks.genruntimeconfig.cache
