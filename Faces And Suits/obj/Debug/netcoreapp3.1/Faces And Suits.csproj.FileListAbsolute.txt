@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits.deps.json
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits.runtimeconfig.json
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits.dll
+/media/martin/HDD/mentormate/Faces And Suits/bin/Debug/netcoreapp3.1/Faces And Suits.pdb
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.AssemblyInfo.cs
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.dll
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.pdb
+/media/martin/HDD/mentormate/Faces And Suits/obj/Debug/netcoreapp3.1/Faces And Suits.genruntimeconfig.cache
