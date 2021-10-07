@@ -1,0 +1,13 @@
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz.deps.json
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz.runtimeconfig.json
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz.runtimeconfig.dev.json
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz.dll
+/media/martin/HDD/mentormate/FizzBuzz/bin/Debug/netcoreapp3.1/FizzBuzz.pdb
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.csprojAssemblyReference.cache
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.AssemblyInfoInputs.cache
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.AssemblyInfo.cs
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.csproj.CoreCompileInputs.cache
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.dll
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.pdb
+/media/martin/HDD/mentormate/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.genruntimeconfig.cache
