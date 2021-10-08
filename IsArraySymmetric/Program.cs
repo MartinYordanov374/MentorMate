@@ -23,14 +23,11 @@ namespace IsArraySymmetric
             {
                 if(targetArray[i] == targetArray[targetArray.Length-1-i])
                 {
-
                     if(i>targetArray.Length/2)
                     {
                         isSymmetric = true;
                     }
-
                 }
-                
             }
 
             if(isSymmetric==true)
