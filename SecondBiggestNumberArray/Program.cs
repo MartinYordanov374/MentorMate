@@ -52,24 +52,18 @@ namespace SecondBiggestNumberArray
 
         static List<int> SortList(List<int> targetList)
         {
-
             for (int i = 0; i < targetList.Count-1; i++)
             {
-
                 for (int j = 0; j < targetList.Count- i - 1; j++)
                 {
-                    
                     if(targetList[j]>targetList[j+1])
                     {
                         int temp = targetList[j]; 
                         targetList[j] = targetList[j+1]; 
                         targetList[j+1] = temp; 
                     }
-
                 }
-
             }
-
             return targetList;
         }
 
