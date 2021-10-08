@@ -41,12 +41,15 @@ namespace SeaChess
                         {
                             gameBoard[isTakenList[1],isTakenList[2]] = 'O';
                         }
-                        if(checkIfWinning(gameBoard) == true)
+                        if(checkIfWinningHorizontally(gameBoard) == true || checkIfWinningVertically(gameBoard) == true || checkIfWinningDiagonally(gameBoard) == true)
                         {
+                            System.Console.WriteLine("WIN");
                             printBoard(gameBoard);
                             Environment.Exit(0);
                         }
                    }
+                    printBoard(gameBoard);
+
                    playerCounter++;
 
                 }
@@ -109,15 +112,87 @@ namespace SeaChess
             return coordinatesList;
         }
 
-        static bool checkIfWinning(char[,] gameBoardState)
+        static bool checkIfWinningHorizontally(char[,] gameBoardState)
         {
-            // check horizontally first
-
-            // check vertically second
-            // finally check diagonally
             
+            // check horizontally first
+            string rowOne = "";
+            string rowTwo = "";
+            string rowThree = "";
+            for (int i = 0; i < 3; i++)
+            {
+                rowOne += gameBoardState[0,i];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                rowTwo += gameBoardState[1,i];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                rowThree += gameBoardState[2,i];
+            }
+            if((rowOne == "XXX" || rowOne == "OOO") || 
+                (rowTwo == "XXX" || rowTwo == "OOO") || 
+                (rowThree == "XXX" || rowThree == "OOO"))
+            {
+                return true;
+            }
+            // check vertically second
+            
+            // finally check diagonally
 
-            printBoard(gameBoardState);
+            return false;
+        }
+
+        static bool checkIfWinningVertically(char[,] gameBoardState)
+        {
+            
+            // check horizontally first
+            string colOne = "";
+            string colTwo = "";
+            string colThree = "";
+            for (int i = 0; i < 3; i++)
+            {
+                colOne += gameBoardState[i,0];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                colTwo += gameBoardState[i,1];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                colThree += gameBoardState[i,2];
+            }
+            if((colOne == "XXX" || colOne == "OOO") || 
+                (colTwo == "XXX" || colTwo == "OOO") || 
+                (colThree == "XXX" || colThree == "OOO"))
+            {
+                return true;
+            }
+            // check vertically second
+            
+            // finally check diagonally
+            return false;
+        }
+        static bool checkIfWinningDiagonally(char[,] gameBoardState)
+        {
+            
+            // check horizontally first
+            string diagonalOne = "";
+            string diagonalTwo = "";
+            for (int i = 0; i < 3; i++)
+            {
+                if(gameBoardState[i,i] != '-')
+                {
+                    diagonalOne += gameBoardState[i,i];
+                }
+            }
+            System.Console.WriteLine(diagonalOne);
+            if((diagonalOne == "XXX" || diagonalOne == "OOO"))
+            {
+                return true;
+            }
+            
             return false;
         }
 
