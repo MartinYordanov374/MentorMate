@@ -25,7 +25,7 @@ namespace SeaChess
                     currentPlayer = playerCounter % 2 == 0 ? 1 : 2; 
 
                     printBoard(gameBoard);
-                    if(CheckForWinningMove(gameBoard,currentPlayerMark))
+                    if(CheckForWinningMove(gameBoard,currentPlayerMark) || CheckDiagonals(gameBoard, currentPlayerMark))
                     {
                         printBoard(gameBoard);
                         Console.WriteLine($"Player {currentPlayerMark} wins");
@@ -123,24 +123,27 @@ namespace SeaChess
                     {
                         return true;
                     }
-                    
                     playerMarkCounter = 0;
-
-                    if (board[(BOARD_ROWS -1) - i, i] == playerMark)
-                    {
-                        playerMarkCounter++;
-                    }
-
-                    if (playerMarkCounter == BOARD_COLUMNS)
-                    {
-                        return true;
-                    }
                 }
 
             }
             return false;
         }
+        
+        static bool CheckDiagonals(char[,] board, char playerMark)
+        {
+            if (board[0,0] == playerMark && board[1,1] == playerMark && board[2,2] == playerMark)
+            {
+                return true;
+            }  
+            if (board[2,0] == playerMark && board[1,1] == playerMark && board[0,2] == playerMark)
+            {
+                return true;
+            }  
+                      
 
+            return false;
+        }
         static List<dynamic> checkIfGameFieldTaken(int xCoordinate, int yCoordinate, char[,] gameBoardState, char currentPlayerMark)
         {            
             bool isTaken = false;
