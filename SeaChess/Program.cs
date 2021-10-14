@@ -132,14 +132,36 @@ namespace SeaChess
         
         static bool CheckDiagonals(char[,] board, char playerMark)
         {
-            if (board[0,0] == playerMark && board[1,1] == playerMark && board[2,2] == playerMark)
+            // if (board[0,0] == playerMark && board[1,1] == playerMark && board[2,2] == playerMark)
+            // {
+            //     return true;
+            // }  
+            // if (board[2,0] == playerMark && board[1,1] == playerMark && board[0,2] == playerMark)
+            // {
+            //     return true;
+            // }  
+            // return false;
+            int playerCounterFirstDiagonal = 0;
+            int playerCounterSecondDiagonal = 0;
+            for (int col = 0; col < BOARD_COLUMNS; col++)
+            {
+                for (int row = 0; row < BOARD_ROWS; row++)
+                {
+                    if(col==row)
+                    {
+                        if(board[row,col] == playerMark)
+                        {
+                            playerCounterFirstDiagonal++;
+                        }
+                        
+                    }
+                }
+            }
+            System.Console.WriteLine(playerCounterSecondDiagonal);
+            if(playerCounterFirstDiagonal==BOARD_COLUMNS || playerCounterSecondDiagonal==BOARD_COLUMNS-1)
             {
                 return true;
-            }  
-            if (board[2,0] == playerMark && board[1,1] == playerMark && board[0,2] == playerMark)
-            {
-                return true;
-            }  
+            }
             return false;
         }
         static List<dynamic> CheckIfGameFieldTaken(int xCoordinate, int yCoordinate, char[,] gameBoardState, char currentPlayerMark)
