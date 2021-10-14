@@ -6,23 +6,34 @@ namespace SeaChess
 {
     class Program
     {
+        const int BOARD_ROWS = 3;
+        const int BOARD_COLUMNS = 3;
+        const int MAX_NUMBER_OF_MOVES = BOARD_ROWS * BOARD_COLUMNS;
+        const char PLAYER1MARK = 'X';
+        const char PLAYER2MARK = 'O';
         static void Main(string[] args)
         {
-            char[,] gameBoard = new char[3,3]
-            {
-                {'-','-','-'},
-                {'-', '-', '-'},
-                {'-', '-', '-'}
-            };
+            char[,] gameBoard = initBoard();
+            printBoard(gameBoard);
 
             int xCoord = 0;
             int yCoord = 0;
             int playerCounter = 0; // even numbers for player 1 and odd numbers for player 2
+            int currentPlayer = 1;
             for (int i = 0; i < gameBoard.GetLength(0); i++)
             {
                 for (int j = 0; j < gameBoard.GetLength(1); j++)
                 {
                     
+                    currentPlayer = playerCounter % 2 == 0 ? currentPlayer = 1 : currentPlayer = 2; 
+                    if(currentPlayer == 1)
+                    {
+                        Console.WriteLine("Player 1's turn. -> Place an X");
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Player 2's turn -> Place an O");
+                    }
                    Console.WriteLine("Enter x coordinate: ");
                    xCoord = promptUserForX(int.Parse(Console.ReadLine()));
                                    
@@ -33,19 +44,22 @@ namespace SeaChess
 
                    if(isTakenList[0] == false)
                    {
-                        if(playerCounter % 2 == 0 )
+                        if(currentPlayer == 1)
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             gameBoard[isTakenList[1],isTakenList[2]] = 'X';
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
+
                             gameBoard[isTakenList[1],isTakenList[2]] = 'O';
                         }
                         if(checkIfWinningHorizontally(gameBoard) == true || checkIfWinningVertically(gameBoard) == true || checkIfWinningDiagonally(gameBoard) == true)
                         {
                             System.Console.WriteLine("WIN");
                             printBoard(gameBoard);
-                            Environment.Exit(0);
+                            break;
                         }
                    }
                     printBoard(gameBoard);
@@ -137,10 +151,6 @@ namespace SeaChess
             {
                 return true;
             }
-            // check vertically second
-            
-            // finally check diagonally
-
             return false;
         }
 
@@ -198,6 +208,7 @@ namespace SeaChess
 
         static void printBoard(char[,] gameBoard)
         {
+            Console.Clear();
             for (int row = 0; row < gameBoard.GetLength(0); row++)
             {
                 for (int col = 0; col < gameBoard.GetLength(1); col++)
@@ -207,6 +218,19 @@ namespace SeaChess
                 }
                 Console.Write("\n"+"\n");
             }
+        }
+        static char[,] initBoard()
+        {
+            char[,] result = new char[BOARD_ROWS, BOARD_COLUMNS];
+            for(int i = 0; i < BOARD_ROWS; i++)
+            {
+                for (int j = 0; j < BOARD_COLUMNS; j++)
+                {
+                    result[i, j] = '-';
+                }
+            }
+
+            return result;
         }
     }
     
