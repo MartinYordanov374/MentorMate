@@ -13,7 +13,7 @@ namespace SeaChess
         const char PLAYER2MARK = 'O';
         static void Main(string[] args)
         {
-            char[,] gameBoard = initBoard();
+            char[,] gameBoard = InitBoard();
             int xCoord = 0;
             int yCoord = 0;
             int playerCounter = 0; 
@@ -24,10 +24,10 @@ namespace SeaChess
             {                    
                     currentPlayer = playerCounter % 2 == 0 ? 1 : 2; 
 
-                    printBoard(gameBoard);
+                    PrintBoard(gameBoard);
                     if(CheckForWinningMove(gameBoard,currentPlayerMark) || CheckDiagonals(gameBoard, currentPlayerMark))
                     {
-                        printBoard(gameBoard);
+                        PrintBoard(gameBoard);
                         Console.WriteLine($"Player {currentPlayerMark} wins");
                         break;
                     }
@@ -49,12 +49,12 @@ namespace SeaChess
                     }
             
                    Console.WriteLine("Enter x coordinate [0-2]: ");
-                   xCoord = promptUserForX(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
+                   xCoord = PromptUserForX(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
                                    
                    Console.WriteLine("Enter y coordinate [0-2]: ");
-                   yCoord = promptUserForY(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
+                   yCoord = PromptUserForY(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
 
-                   List<dynamic> isTakenList = checkIfGameFieldTaken(xCoord, yCoord, gameBoard,currentPlayerMark);
+                   List<dynamic> isTakenList = CheckIfGameFieldTaken(xCoord, yCoord, gameBoard,currentPlayerMark);
 
                    if(isTakenList[0] == false)
                    {
@@ -140,11 +140,9 @@ namespace SeaChess
             {
                 return true;
             }  
-                      
-
             return false;
         }
-        static List<dynamic> checkIfGameFieldTaken(int xCoordinate, int yCoordinate, char[,] gameBoardState, char currentPlayerMark)
+        static List<dynamic> CheckIfGameFieldTaken(int xCoordinate, int yCoordinate, char[,] gameBoardState, char currentPlayerMark)
         {            
             bool isTaken = false;
 
@@ -156,12 +154,12 @@ namespace SeaChess
                 Console.WriteLine("That field is already taken !");
                         
                 Console.WriteLine("Please enter a new x coordinate: ");
-                xCoordinate = promptUserForX(int.Parse(Console.ReadLine()), gameBoardState,currentPlayerMark);
+                xCoordinate = PromptUserForX(int.Parse(Console.ReadLine()), gameBoardState,currentPlayerMark);
 
                 Console.WriteLine("Please enter a new y coordinate: ");
-                yCoordinate = promptUserForY(int.Parse(Console.ReadLine()), gameBoardState, currentPlayerMark);
+                yCoordinate = PromptUserForY(int.Parse(Console.ReadLine()), gameBoardState, currentPlayerMark);
 
-                return checkIfGameFieldTaken(xCoordinate, yCoordinate, gameBoardState, currentPlayerMark);
+                return CheckIfGameFieldTaken(xCoordinate, yCoordinate, gameBoardState, currentPlayerMark);
             }
             coordinatesList.Add(isTaken);
             coordinatesList.Add(xCoordinate);
@@ -169,7 +167,7 @@ namespace SeaChess
 
             return coordinatesList;
         }
-        static int promptUserForX(int xCoordinate, char[,] gameBoard, char currentPlayerMark)
+        static int PromptUserForX(int xCoordinate, char[,] gameBoard, char currentPlayerMark)
         {
             if(xCoordinate > 2 || xCoordinate < 0)
             {
@@ -177,18 +175,18 @@ namespace SeaChess
 
                 xCoordinate = int.Parse(Console.ReadLine());
 
-                return promptUserForX(xCoordinate,gameBoard,currentPlayerMark);
+                return PromptUserForX(xCoordinate,gameBoard,currentPlayerMark);
             }
 
             return xCoordinate;
         }
 
-         static int promptUserForY(int yCoordinate, char[,] gameBoard, char currentPlayerMark)
+         static int PromptUserForY(int yCoordinate, char[,] gameBoard, char currentPlayerMark)
         {
             if(CheckForWinningMove(gameBoard,currentPlayerMark))
             {
                 Console.WriteLine("WIN");
-                printBoard(gameBoard);
+                PrintBoard(gameBoard);
                 Environment.Exit(0);
             }
             if(yCoordinate > 2 || yCoordinate < 0)
@@ -197,12 +195,12 @@ namespace SeaChess
 
                 yCoordinate = int.Parse(Console.ReadLine());
 
-                return promptUserForY(yCoordinate, gameBoard, currentPlayerMark);
+                return PromptUserForY(yCoordinate, gameBoard, currentPlayerMark);
             }
 
             return yCoordinate;
         }
-        static void printBoard(char[,] gameBoard)
+        static void PrintBoard(char[,] gameBoard)
         {
             Console.Clear();
             for (int row = 0; row < BOARD_ROWS; row++)
@@ -215,7 +213,7 @@ namespace SeaChess
                 Console.Write("\n"+"\n");
             }
         }
-        static char[,] initBoard()
+        static char[,] InitBoard()
         {
             char[,] result = new char[BOARD_ROWS, BOARD_COLUMNS];
             for(int i = 0; i < BOARD_ROWS; i++)
