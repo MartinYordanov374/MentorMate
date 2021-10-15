@@ -6,8 +6,8 @@ namespace SeaChess
 {
     class Program
     {
-        const int BOARD_ROWS = 3;
-        const int BOARD_COLUMNS = 3;
+        const int BOARD_ROWS = 5;
+        const int BOARD_COLUMNS = 5;
         const int MAX_NUMBER_OF_MOVES = BOARD_ROWS * BOARD_COLUMNS;
         const char PLAYER1MARK = 'X';
         const char PLAYER2MARK = 'O';
@@ -244,17 +244,28 @@ namespace SeaChess
             for (int rowIndicator = 0; rowIndicator < BOARD_ROWS; rowIndicator++)
             {
                 topNumbers += rowIndicator.ToString()+" ";
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.BackgroundColor = ConsoleColor.DarkGray;
             }
-            System.Console.WriteLine("  "+topNumbers);
+            Console.WriteLine(" " + topNumbers);
+            Console.ResetColor();
             for (int row = 0; row < BOARD_ROWS; row++)
             {
-                System.Console.Write($"{row} ");
+                ColorCharacter(row.ToString());
                 for (int col = 0; col < BOARD_COLUMNS; col++)
                 {
                     Console.Write(string.Format($"{gameBoard[row, col]} "));
                 }
                 Console.Write("\n"+"\n");
             }
+        }
+        static void ColorCharacter(string character)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.Write(character+"");
+            Console.ResetColor();
+
         }
     }
     
