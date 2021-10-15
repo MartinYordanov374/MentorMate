@@ -6,8 +6,8 @@ namespace SeaChess
 {
     class Program
     {
-        const int BOARD_ROWS = 3;
-        const int BOARD_COLUMNS = 3;
+        const int BOARD_ROWS = 4;
+        const int BOARD_COLUMNS = 4;
         const int MAX_NUMBER_OF_MOVES = BOARD_ROWS * BOARD_COLUMNS;
         const char PLAYER1MARK = 'X';
         const char PLAYER2MARK = 'O';
@@ -184,7 +184,7 @@ namespace SeaChess
         }
         static int PromptUserForX(int xCoordinate, char[,] gameBoard, char currentPlayerMark)
         {
-            if(xCoordinate > 2 || xCoordinate < 0)
+            if(xCoordinate > BOARD_ROWS || xCoordinate < 0)
             {
                 Console.WriteLine("Please enter a valid x coordinate [0-2]: ");
 
@@ -204,7 +204,7 @@ namespace SeaChess
                 PrintBoard(gameBoard);
                 Environment.Exit(0);
             }
-            if(yCoordinate > 2 || yCoordinate < 0)
+            if(yCoordinate > BOARD_COLUMNS || yCoordinate < 0)
             {
                 Console.WriteLine("Please enter a valid y coordinate [0-2]: ");
 
