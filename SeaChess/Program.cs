@@ -48,10 +48,10 @@ namespace SeaChess
                         Console.WriteLine("Player 2's turn -> Place a O");
                     }
             
-                   Console.WriteLine("Enter x coordinate [0-2]: ");
+                   Console.WriteLine($"Enter x coordinate [0-{BOARD_ROWS}]: ");
                    xCoord = PromptUserForX(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
                                    
-                   Console.WriteLine("Enter y coordinate [0-2]: ");
+                   Console.WriteLine($"Enter y coordinate [0-{BOARD_COLUMNS}]: ");
                    yCoord = PromptUserForY(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
 
                    List<dynamic> isTakenList = CheckIfGameFieldTaken(xCoord, yCoord, gameBoard,currentPlayerMark);
@@ -186,7 +186,7 @@ namespace SeaChess
         {
             if(xCoordinate > BOARD_ROWS || xCoordinate < 0)
             {
-                Console.WriteLine("Please enter a valid x coordinate [0-2]: ");
+                Console.WriteLine($"Please enter a valid x coordinate [0-{BOARD_ROWS}]: ");
 
                 xCoordinate = int.Parse(Console.ReadLine());
 
@@ -206,7 +206,7 @@ namespace SeaChess
             }
             if(yCoordinate > BOARD_COLUMNS || yCoordinate < 0)
             {
-                Console.WriteLine("Please enter a valid y coordinate [0-2]: ");
+                Console.WriteLine($"Please enter a valid y coordinate [0-{BOARD_COLUMNS}]: ");
 
                 yCoordinate = int.Parse(Console.ReadLine());
 
