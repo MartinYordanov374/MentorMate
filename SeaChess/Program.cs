@@ -6,8 +6,8 @@ namespace SeaChess
 {
     class Program
     {
-        const int BOARD_ROWS = 4;
-        const int BOARD_COLUMNS = 4;
+        const int BOARD_ROWS = 5;
+        const int BOARD_COLUMNS = 5;
         const int MAX_NUMBER_OF_MOVES = BOARD_ROWS * BOARD_COLUMNS;
         const char PLAYER1MARK = 'X';
         const char PLAYER2MARK = 'O';
@@ -48,10 +48,10 @@ namespace SeaChess
                         Console.WriteLine("Player 2's turn -> Place a O");
                     }
             
-                   Console.WriteLine($"Enter x coordinate [0-{BOARD_ROWS}]: ");
+                   Console.WriteLine($"Enter x coordinate [0-{BOARD_ROWS-1}]: ");
                    xCoord = PromptUserForX(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
                                    
-                   Console.WriteLine($"Enter y coordinate [0-{BOARD_COLUMNS}]: ");
+                   Console.WriteLine($"Enter y coordinate [0-{BOARD_COLUMNS-1}]: ");
                    yCoord = PromptUserForY(int.Parse(Console.ReadLine()), gameBoard, currentPlayerMark);
 
                    List<dynamic> isTakenList = CheckIfGameFieldTaken(xCoord, yCoord, gameBoard,currentPlayerMark);
@@ -186,7 +186,7 @@ namespace SeaChess
         {
             if(xCoordinate > BOARD_ROWS || xCoordinate < 0)
             {
-                Console.WriteLine($"Please enter a valid x coordinate [0-{BOARD_ROWS}]: ");
+                Console.WriteLine($"Please enter a valid x coordinate [0-{BOARD_ROWS-1}]: ");
 
                 xCoordinate = int.Parse(Console.ReadLine());
 
@@ -206,7 +206,7 @@ namespace SeaChess
             }
             if(yCoordinate > BOARD_COLUMNS || yCoordinate < 0)
             {
-                Console.WriteLine($"Please enter a valid y coordinate [0-{BOARD_COLUMNS}]: ");
+                Console.WriteLine($"Please enter a valid y coordinate [0-{BOARD_COLUMNS-1}]: ");
 
                 yCoordinate = int.Parse(Console.ReadLine());
 
@@ -232,12 +232,18 @@ namespace SeaChess
         static void PrintBoard(char[,] gameBoard)
         {
             Console.Clear();
+            string topNumbers = "";
+            for (int rowIndicator = 0; rowIndicator < BOARD_ROWS; rowIndicator++)
+            {
+                topNumbers += rowIndicator.ToString()+" ";
+            }
+            System.Console.WriteLine("  "+topNumbers);
             for (int row = 0; row < BOARD_ROWS; row++)
             {
+                System.Console.Write($"{row} ");
                 for (int col = 0; col < BOARD_COLUMNS; col++)
                 {
-                    
-                    Console.Write(string.Format("{0} ", gameBoard[row, col]));
+                    Console.Write(string.Format($"{gameBoard[row, col]} "));
                 }
                 Console.Write("\n"+"\n");
             }
