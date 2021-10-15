@@ -132,15 +132,6 @@ namespace SeaChess
         
         static bool CheckDiagonals(char[,] board, char playerMark)
         {
-            // if (board[0,0] == playerMark && board[1,1] == playerMark && board[2,2] == playerMark)
-            // {
-            //     return true;
-            // }  
-            // if (board[2,0] == playerMark && board[1,1] == playerMark && board[0,2] == playerMark)
-            // {
-            //     return true;
-            // }  
-            // return false;
             int playerCounterFirstDiagonal = 0;
             int playerCounterSecondDiagonal = 0;
             for (int col = 0; col < BOARD_COLUMNS; col++)
@@ -153,12 +144,14 @@ namespace SeaChess
                         {
                             playerCounterFirstDiagonal++;
                         }
-                        
+                        if(board[row,BOARD_COLUMNS-(row+1)] == playerMark)
+                        {
+                            playerCounterSecondDiagonal++;
+                        }
                     }
                 }
             }
-            System.Console.WriteLine(playerCounterSecondDiagonal);
-            if(playerCounterFirstDiagonal==BOARD_COLUMNS || playerCounterSecondDiagonal==BOARD_COLUMNS-1)
+            if(playerCounterFirstDiagonal==BOARD_COLUMNS || playerCounterSecondDiagonal==BOARD_COLUMNS)
             {
                 return true;
             }
@@ -222,19 +215,7 @@ namespace SeaChess
 
             return yCoordinate;
         }
-        static void PrintBoard(char[,] gameBoard)
-        {
-            Console.Clear();
-            for (int row = 0; row < BOARD_ROWS; row++)
-            {
-                for (int col = 0; col < BOARD_COLUMNS; col++)
-                {
-                    
-                    Console.Write(string.Format("{0} ", gameBoard[row, col]));
-                }
-                Console.Write("\n"+"\n");
-            }
-        }
+
         static char[,] InitBoard()
         {
             char[,] result = new char[BOARD_ROWS, BOARD_COLUMNS];
@@ -247,6 +228,19 @@ namespace SeaChess
             }
 
             return result;
+        }
+        static void PrintBoard(char[,] gameBoard)
+        {
+            Console.Clear();
+            for (int row = 0; row < BOARD_ROWS; row++)
+            {
+                for (int col = 0; col < BOARD_COLUMNS; col++)
+                {
+                    
+                    Console.Write(string.Format("{0} ", gameBoard[row, col]));
+                }
+                Console.Write("\n"+"\n");
+            }
         }
     }
     
