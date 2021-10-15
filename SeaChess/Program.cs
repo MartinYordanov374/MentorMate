@@ -6,8 +6,8 @@ namespace SeaChess
 {
     class Program
     {
-        const int BOARD_ROWS = 5;
-        const int BOARD_COLUMNS = 5;
+        const int BOARD_ROWS = 3;
+        const int BOARD_COLUMNS = 3;
         const int MAX_NUMBER_OF_MOVES = BOARD_ROWS * BOARD_COLUMNS;
         const char PLAYER1MARK = 'X';
         const char PLAYER2MARK = 'O';
@@ -96,9 +96,17 @@ namespace SeaChess
             {
                 for (int j = 0; j < BOARD_ROWS; j++)
                 {
-                    if (board[i, j] == playerMark)
+                    try{
+                        if (board[i, j] == playerMark)
+                        {
+                            playerMarkCounter++;
+                        }
+
+                    }
+                    catch(Exception)
                     {
-                        playerMarkCounter++;
+                        Console.WriteLine("Your gameBoard is not a matrix. Press any key to exit.");
+                        Console.ReadLine();
                     }
                 }
 
