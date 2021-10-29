@@ -7,71 +7,37 @@ namespace SecondBiggestNumberArray
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Enter array size: ");
-            int n = int.Parse(Console.ReadLine());
+            int[] numberArray = new int[]{4,5,10,456,2000};
 
-            int[] numberArray = new int[n];
-
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine($"Enter element at index {i}: ");
-                numberArray[i] = int.Parse(Console.ReadLine());
-            }
+            int maxNumberFirst = int.MinValue;
             
-            Console.WriteLine($"The second biggest number in your array is {MergeSort(numberArray)}.");
-        }
+            int maxNumberSecond = int.MinValue;
 
-        static int MergeSort(int[] unsortedArray)
-        {
-            int midPoint = unsortedArray.Length/2;
+            int difference = 0;
 
-            List<int> leftSide = new List<int>();
-            List<int> rightSide = new List<int>();
+            int[] differences = new int[numberArray.Length];
 
-            for (int i = 0; i < midPoint; i++)
+            for (int i = 0; i < numberArray.Length; i++)
             {
-                leftSide.Add(unsortedArray[i]);
-            }
-
-            for (int i = midPoint-1; i < unsortedArray.Length; i++)
-            {
-                rightSide.Add(unsortedArray[i]);
-            }
-            
-            leftSide = SortList(leftSide);
-
-            rightSide = SortList(rightSide);
-
-            List<int> sortedMergedList = SortList(MergeList(leftSide,rightSide)).Distinct().ToList();
-
-            int secondBiggestNumber = sortedMergedList[sortedMergedList.Count-2];
-            
-            return secondBiggestNumber;
-
-        }
-
-        static List<int> SortList(List<int> targetList)
-        {
-            for (int i = 0; i < targetList.Count-1; i++)
-            {
-                for (int j = 0; j < targetList.Count- i - 1; j++)
+                if(numberArray[i] > maxNumberFirst)
                 {
-                    if(targetList[j]>targetList[j+1])
+                    maxNumberFirst = numberArray[i];
+                }
+                if(i>0)
+                {
+                    difference = maxNumberFirst - numberArray[i-1];
+                    if(difference != 0)
                     {
-                        int temp = targetList[j]; 
-                        targetList[j] = targetList[j+1]; 
-                        targetList[j+1] = temp; 
+                        differences[i] = maxNumberFirst - difference;
+                        if(differences[i] > maxNumberSecond)
+                        {
+                            maxNumberSecond = differences[i];
+                        }   
                     }
                 }
             }
-            return targetList;
+            Console.WriteLine("The second biggest number is " + maxNumberSecond);
         }
 
-        static List<int> MergeList(List<int> firstList, List<int> secondList)
-        {
-
-            List<int> mergedLists = new List<int>();
-            return mergedLists = mergedLists.Concat(firstList).Concat(secondList).ToList();
-        }
     }
 }

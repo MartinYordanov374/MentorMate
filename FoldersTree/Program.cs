@@ -19,8 +19,7 @@ namespace FoldersTree
             if(directory.Exists)
             {
 
-               string dirName = string.Empty;
-               dirName = dirName + directory.Name;
+               string dirName = directory.Name;
 
                int childrenDirectoriesAmount = directory.GetDirectories().Length;
                int minimalDirectoriesAmount = 1;
