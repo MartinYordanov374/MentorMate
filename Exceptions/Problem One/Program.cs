@@ -34,7 +34,6 @@ namespace Problem_One
                     && numberNine < numberTen 
                     && numberTen < 100 ;
 
-                    System.Console.WriteLine(areValidNumbers);
 
                     if( areValidNumbers )
                     {
