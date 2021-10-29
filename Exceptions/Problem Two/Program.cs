@@ -25,11 +25,10 @@ namespace Problem_Two
         }
         static void ReadFile(string path)
         {
-            try
-            {
-                string resultString = File.ReadAllText(path);
-                System.Console.WriteLine(resultString);
-            }
+
+            string resultString = File.ReadAllText(path);
+            System.Console.WriteLine(resultString);
+            
 
         }
     }
