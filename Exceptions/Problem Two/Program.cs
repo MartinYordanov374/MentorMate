@@ -23,10 +23,12 @@ namespace Problem_Two
             }
             ReadFile(textFilePath);
         }
+        
         static void ReadFile(string path)
         {
             
-            try{
+            try
+            {
                 string resultString = File.ReadAllText(path);
                 System.Console.WriteLine(resultString);
 
