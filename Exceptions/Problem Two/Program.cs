@@ -6,7 +6,21 @@ namespace Problem_Two
     {
         static void Main(string[] args)
         {
-            string textFilePath = @"./lorem.txt"; //This one works under Linux. The equivalent for this path would be @".\lorem.txt" under Windows
+            var isLinux = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux);
+            var isWindows = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows);
+            string textFilePath = "";
+            if(isLinux)
+            {
+                textFilePath = @"./lorem.txt"; 
+            }
+            else if(isWindows)
+            {
+                textFilePath = @".\lorem.txt";
+            }
+            else
+            {
+                throw new Exception("Your OS is not supported.");
+            }
             ReadFile(textFilePath);
         }
         static void ReadFile(string path)
@@ -16,9 +30,7 @@ namespace Problem_Two
                 string resultString = File.ReadAllText(path);
                 System.Console.WriteLine(resultString);
             }
-            catch(FileNotFoundException) {
-                throw new Exception("It seems that the provided path is incorrect. Is your escaping correct?");
-            }
+
         }
     }
 }
