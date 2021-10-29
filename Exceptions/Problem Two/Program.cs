@@ -25,9 +25,20 @@ namespace Problem_Two
         }
         static void ReadFile(string path)
         {
+            
+            try{
+                string resultString = File.ReadAllText(path);
+                System.Console.WriteLine(resultString);
 
-            string resultString = File.ReadAllText(path);
-            System.Console.WriteLine(resultString);
+            }
+            catch(UnauthorizedAccessException)
+            {
+                throw new Exception("It seems that you do not have access to this file.");
+            }
+            catch(Exception)
+            {
+                throw new Exception("It seems that the path provided leads to nowhere.");
+            }
             
 
         }
