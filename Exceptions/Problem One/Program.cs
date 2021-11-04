@@ -14,10 +14,19 @@ namespace Problem_One
             {
                     double[] numbersArr = new double[end];
                     int counter = 0;
-                    
+
                     for(int i = 0; i < numbersArr.Length; i++)
                     {
-                        numbersArr[i] = double.Parse(Console.ReadLine());
+                        double input = double.Parse(Console.ReadLine());
+                        if(input > 1 && input < 100)
+                        {
+                           numbersArr[i] = double.Parse(Console.ReadLine());
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("You have a number that does not adhere to the sequence!");
+                            break;
+                         }
                     }
 
                     for(int i = 0; i < numbersArr.Length; i++)
@@ -27,7 +36,7 @@ namespace Problem_One
                             if(numbersArr[i] > 1 && numbersArr[i] < 100 && numbersArr[i] < numbersArr[j])
                             {
                                 counter ++;
-                                if(counter == numbersArr.Length * 2)
+                                if(counter == numbersArr.Length)
                                 {
                                     Console.WriteLine("Your numbers are valid");
                                     break;
