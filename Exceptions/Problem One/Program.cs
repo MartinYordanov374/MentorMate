@@ -20,7 +20,7 @@ namespace Problem_One
                         double input = double.Parse(Console.ReadLine());
                         if(input > 1 && input < 100)
                         {
-                           numbersArr[i] = double.Parse(Console.ReadLine());
+                           numbersArr[i] = input;
                         }
                         else
                         {
@@ -33,7 +33,7 @@ namespace Problem_One
                     {
                         for(int j = i + 1; j < numbersArr.Length; j++)
                         {
-                            if(numbersArr[i] > 1 && numbersArr[i] < 100 && numbersArr[i] < numbersArr[j])
+                            if(numbersArr[i] < numbersArr[j])
                             {
                                 counter ++;
                                 if(counter == numbersArr.Length)
