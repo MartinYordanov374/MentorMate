@@ -1,19 +1,27 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
+
 namespace Problem_Two
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var isLinux = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux);
-            var isWindows = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows);
+            string textFilePath = checkOS();
+            ReadFile(textFilePath);
+        }
+
+        private static string checkOS()
+        {
+            var isLinux = RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
+            var isWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
             string textFilePath = "";
-            if(isLinux)
+            if (isLinux)
             {
-                textFilePath = @"./lorem.txt"; 
+                textFilePath = @"./lorem.txt";
             }
-            else if(isWindows)
+            else if (isWindows)
             {
                 textFilePath = @".\lorem.txt";
             }
@@ -21,9 +29,10 @@ namespace Problem_Two
             {
                 throw new Exception("Your OS is not supported.");
             }
-            ReadFile(textFilePath);
+
+            return textFilePath;
         }
-        
+
         static void ReadFile(string path)
         {
             

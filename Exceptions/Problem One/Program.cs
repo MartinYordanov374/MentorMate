@@ -5,51 +5,40 @@ namespace Problem_One
     {
         static void Main(string[] args)
         {
-            ReadNumber(1,11);
+            ReadNumber(1,10);
         }
         static void ReadNumber(int start, int end)
         {
+
             try
             {
-                    double numberOne = double.Parse(Console.ReadLine());
-                    double numberTwo = double.Parse(Console.ReadLine());
-                    double numberThree = double.Parse(Console.ReadLine());
-                    double numberFour = double.Parse(Console.ReadLine());
-                    double numberFive = double.Parse(Console.ReadLine());
-                    double numberSix = double.Parse(Console.ReadLine());
-                    double numberSeven = double.Parse(Console.ReadLine());
-                    double numberEight = double.Parse(Console.ReadLine());
-                    double numberNine = double.Parse(Console.ReadLine());
-                    double numberTen = double.Parse(Console.ReadLine());
+                    double[] numbersArr = new double[]{ 2, 3, 4, 5, 6, 7, 8, 9 };
+                    int counter = 0;
 
-                    bool areValidNumbers = 1 < numberOne 
-                    && numberOne < numberTwo 
-                    && numberTwo < numberThree 
-                    && numberThree < numberFour 
-                    && numberFour < numberFive 
-                    && numberFive < numberSix 
-                    && numberSix < numberSeven 
-                    && numberSeven < numberEight  
-                    && numberEight < numberNine 
-                    && numberNine < numberTen 
-                    && numberTen < 100 ;
-
-
-                    if( areValidNumbers )
+                    for(int i = 0; i < numbersArr.Length; i++)
                     {
-                        System.Console.WriteLine("Your numbers are valid");
+                        for(int j = i + 1; j < numbersArr.Length; j++)
+                        {
+                            if(numbersArr[i] > 1 && numbersArr[i] < 100 && numbersArr[i] < numbersArr[j])
+                            {
+                                counter ++;
+                                if(counter == numbersArr.Length * 2)
+                                {
+                                    Console.WriteLine("Your numbers are valid");
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("Your number are invalid. Are they bigger or equal to 1 or 100 ?");
+                            }
+                        }
                     }
-                    else if(areValidNumbers == false)
-                    {
-                        throw new Exception("Your number are invalid. Are they bigger or equal to 1 or 100 ?");
-                    }
-
-                
-
             }
+
             catch(Exception)
             {
-                System.Console.WriteLine("Invalid input. Your number is likely outside of the specified range or not a number. Consider that they could not be following the required sequence.");
+                Console.WriteLine("Invalid input. Your number is likely outside of the specified range or not a number. Consider that they could not be following the required sequence.");
             }
             
         }
