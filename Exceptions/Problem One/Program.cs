@@ -12,8 +12,13 @@ namespace Problem_One
 
             try
             {
-                    double[] numbersArr = new double[]{ 2, 3, 4, 5, 6, 7, 8, 9 };
+                    double[] numbersArr = new double[end];
                     int counter = 0;
+                    
+                    for(int i = 0; i < numbersArr.Length; i++)
+                    {
+                        numbersArr[i] = double.Parse(Console.ReadLine());
+                    }
 
                     for(int i = 0; i < numbersArr.Length; i++)
                     {
