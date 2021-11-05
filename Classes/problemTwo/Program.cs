@@ -5,6 +5,13 @@ namespace problemTwo
 {
     class Program
     {
+        public enum subjects
+        {
+            Mathematics = 1,
+            Physics = 2,
+            Software = 3,
+            Literature = 4 
+        }
         static void Main(string[] args)
         {
             Student John = new Student("John", "11e");
@@ -12,37 +19,34 @@ namespace problemTwo
             int subjectRequiredGrades = 4;
             int classesAmount = 4;
 
-            List<double> grades = new List<double>();
-            List<double> averageGrades = new List<double>();
-
             for(int i = 1; i <= subjectRequiredGrades; i++)
             {
-                string currClass = string.Empty;
+                subjects currClass = subjects.Mathematics;
 
                 switch(i)
                 {
 
                     case 1:
                     {
-                        currClass = "Mathematics";
+                        currClass = subjects.Mathematics;
                         break;
                     }
                     
                     case 2:
                     {
-                        currClass = "Physics";
+                        currClass = subjects.Physics;
                         break;
                     }
 
                     case 3:
                     {
-                        currClass = "Software";
+                        currClass = subjects.Software;
                         break;
                     }
 
                     case 4:
                     {
-                        currClass = "Literature";
+                        currClass = subjects.Literature;
                         break;
                     }
 
@@ -54,47 +58,17 @@ namespace problemTwo
                 {
                     Console.WriteLine($"Enter grade {j}: ");
 
-                    try
-                    {
-                        double grade = double.Parse(Console.ReadLine());
-
-                        if(grade > 6)
-                        {
-                            grade = 6;
-                        }
-
-                        grades.Add(grade);
-                    }
-                    catch(Exception)
-                    {
-                        Console.WriteLine("It appears that the grade you entered is invalid. Is it a number?");
-                    }
+                    double grade = double.Parse(Console.ReadLine());
+                    string convertedSubject = currClass.ToString();
+                    John.addGrade(convertedSubject, grade);
 
                 }
 
-                double gradesSum = grades.Aggregate((item, itemTWo) => {
-                   return item + itemTWo;
-                });
-
-                double average = gradesSum / grades.Count();
-
-                averageGrades.Add(average);
-
-                Console.WriteLine($"Average -> {average}");
-
-                grades.Clear();
+                John.calculateAverageGrade();
 
             }
 
-            double finalGradesSum = averageGrades.Aggregate((itemOne, itemTwo) => {
-                return itemOne + itemTwo;
-            });
-
-            double finalGrade = finalGradesSum / subjectRequiredGrades;
-
-            string isPassing = John.isStudentPassing(finalGrade) ? $"Student passed with a grade of {finalGrade}" : "Student failed to pass";
-
-            Console.WriteLine(isPassing);
+            John.calculateFinalGrade(subjectRequiredGrades);
 
         }
     }
