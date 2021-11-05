@@ -26,34 +26,19 @@ namespace problemTwo
 
             int subjectRequiredGrades = Enum.GetNames(typeof(subjects)).Length;
 
-            John.addGrade(mathematicsClass, 5);    
-            John.addGrade(mathematicsClass, 6);    
-            John.addGrade(mathematicsClass, 6);    
-            John.addGrade(mathematicsClass, 6);   
+            Grade mathGrade = new Grade(mathematicsClass, 6);
+            Grade physicsGrade = new Grade(physicsClass, 5);
+            Grade softwareGrade = new Grade(softwareClass, 6);
 
-            John.calculateAverageGrade();
+            Grade literatureGrade = new Grade(literatureClass, 6);
 
-            John.addGrade(physicsClass, 6);
-            John.addGrade(physicsClass, 5);
-            John.addGrade(physicsClass, 6);
-            John.addGrade(physicsClass, 6);  
+            John.addGrade(mathematicsClass, mathGrade);    
+            John.addGrade(physicsClass, physicsGrade);    
+            John.addGrade(softwareClass, softwareGrade);    
+            John.addGrade(literatureClass, literatureGrade);   
+
+            John.calculateAverageGrade(subjectRequiredGrades);
             
-            John.calculateAverageGrade();
-
-            John.addGrade(softwareClass, 6);  
-            John.addGrade(softwareClass, 5);  
-            John.addGrade(softwareClass, 6); 
-
-            John.calculateAverageGrade();
-
-            John.addGrade(literatureClass, 4); 
-            John.addGrade(literatureClass, 6); 
-            John.addGrade(literatureClass, 6); 
-
-            John.calculateAverageGrade();
-
-            John.calculateFinalGrade(subjectRequiredGrades);
-
         }
     }
 }

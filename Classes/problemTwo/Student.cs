@@ -29,7 +29,7 @@ class Student
     #endregion
 
     #region lists
-        List<double> grades = new List<double>();
+        List<Grade> grades = new List<Grade>();
         List<double> averageGrades = new List<double>();
     #endregion
 
@@ -45,14 +45,14 @@ class Student
                 return false;
             }
         }
-        public void addGrade(string Subject, double grade)
+        public void addGrade(string Subject, Grade grade)
         {
             
             try
             {
-                if(grade > 6)
+                if(grade.SubjectGrade > 6)
                 {
-                    grade = 6;
+                    grade.SubjectGrade = 6;
                 }
                 grades.Add(grade);
             }
@@ -63,28 +63,59 @@ class Student
             }
 
         }
-        public void calculateAverageGrade()
+        public void calculateAverageGrade(int classesAmount)
         {
-            double gradesSum = grades.Aggregate((item, itemTWo) => {
-               return item + itemTWo;
-            });
+            
 
-            double average = gradesSum / grades.Count();
+            int mathGradesCount = grades.Where(c => c.subjectName == "Mathematics").Count();
+            int physicsGradesCount = grades.Where(c => c.subjectName == "Physics").Count();
+            int softwareGradesCount = grades.Where(c => c.subjectName == "Software").Count();
+            int literatureGradesCount = grades.Where(c => c.subjectName == "Literature").Count();
 
-            averageGrades.Add(average);
+            double mathGrade = 0;
+            double physicsGrade = 0;
+            double softwareGrade = 0;
+            double literatureGrade = 0;
 
-            grades.Clear();
+            var mathGrades = grades.Where(c => c.subjectName == "Mathematics").Select(item => item.subjectGrade).ToArray();
+            var physicsGrades = grades.Where(c => c.subjectName == "Physics").Select(item => item.subjectGrade).ToArray();
+            var softwareGrades = grades.Where(c => c.subjectName == "Software").Select(item => item.subjectGrade).ToArray();
+            var literatureGrades = grades.Where(c => c.subjectName == "Literature").Select(item => item.subjectGrade).ToArray();
+
+            foreach(double grade in mathGrades)
+            {
+                mathGrade += grade;
+            }
+
+            foreach(double grade in physicsGrades)
+            {
+                physicsGrade += grade;
+            }
+
+            foreach(double grade in softwareGrades)
+            {
+                softwareGrade += grade;
+            }
+
+            foreach(double grade in literatureGrades)
+            {
+                literatureGrade += grade;
+            }
+            
+            mathGrade /= mathGradesCount;
+            physicsGrade /= physicsGradesCount;
+            softwareGrade /= softwareGradesCount;
+            literatureGrade /= literatureGradesCount;
+
+            double averageGradeTotal = (mathGrade + physicsGrade + softwareGrade + literatureGrade) / classesAmount;
+            calculateFinalGrade(averageGradeTotal);
         }
 
-        public void calculateFinalGrade(int subjectRequiredGrades)
+        public void calculateFinalGrade(double averageGrade)
         {
-             double finalGradesSum = averageGrades.Aggregate((itemOne, itemTwo) => {
-                return itemOne + itemTwo;
-            });
 
-            double finalGrade = finalGradesSum / subjectRequiredGrades;
 
-            string isPassing = isStudentPassing(finalGrade) ? $"Student passed with a grade of {finalGrade}" : "Student failed to pass";
+            string isPassing = isStudentPassing(averageGrade) ? $"Student passed with a grade of {averageGrade}" : "Student failed to pass";
 
             Console.WriteLine(isPassing);
         }
