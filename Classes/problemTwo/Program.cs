@@ -16,57 +16,41 @@ namespace problemTwo
         {
             Student John = new Student("John", "11e");
 
-            int subjectRequiredGrades = 4;
-            int classesAmount = 4;
+            string mathematicsClass = subjects.Mathematics.ToString();
 
-            for(int i = 1; i <= subjectRequiredGrades; i++)
-            {
-                subjects currClass = subjects.Mathematics;
+            string physicsClass = subjects.Physics.ToString();
 
-                switch(i)
-                {
+            string softwareClass = subjects.Software.ToString();
 
-                    case 1:
-                    {
-                        currClass = subjects.Mathematics;
-                        break;
-                    }
-                    
-                    case 2:
-                    {
-                        currClass = subjects.Physics;
-                        break;
-                    }
+            string literatureClass = subjects.Literature.ToString();
 
-                    case 3:
-                    {
-                        currClass = subjects.Software;
-                        break;
-                    }
+            int subjectRequiredGrades = Enum.GetNames(typeof(subjects)).Length;
 
-                    case 4:
-                    {
-                        currClass = subjects.Literature;
-                        break;
-                    }
+            John.addGrade(mathematicsClass, 5);    
+            John.addGrade(mathematicsClass, 6);    
+            John.addGrade(mathematicsClass, 6);    
+            John.addGrade(mathematicsClass, 6);   
 
-                }
+            John.calculateAverageGrade();
 
-                Console.WriteLine($"Enter {subjectRequiredGrades} grades for {currClass} class: ");
+            John.addGrade(physicsClass, 6);
+            John.addGrade(physicsClass, 5);
+            John.addGrade(physicsClass, 6);
+            John.addGrade(physicsClass, 6);  
+            
+            John.calculateAverageGrade();
 
-                for(int j = 1; j <= classesAmount; j++)
-                {
-                    Console.WriteLine($"Enter grade {j}: ");
+            John.addGrade(softwareClass, 6);  
+            John.addGrade(softwareClass, 5);  
+            John.addGrade(softwareClass, 6); 
 
-                    double grade = double.Parse(Console.ReadLine());
-                    string convertedSubject = currClass.ToString();
-                    John.addGrade(convertedSubject, grade);
+            John.calculateAverageGrade();
 
-                }
+            John.addGrade(literatureClass, 4); 
+            John.addGrade(literatureClass, 6); 
+            John.addGrade(literatureClass, 6); 
 
-                John.calculateAverageGrade();
-
-            }
+            John.calculateAverageGrade();
 
             John.calculateFinalGrade(subjectRequiredGrades);
 
