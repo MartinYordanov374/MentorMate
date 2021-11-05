@@ -34,7 +34,7 @@ class Student
     #endregion
 
     #region METHODS
-        public bool isStudentPassing(double averageGrade)
+        public bool IsStudentPassing(double averageGrade)
         {
             if(averageGrade > 2.00)
             {
@@ -45,7 +45,7 @@ class Student
                 return false;
             }
         }
-        public void addGrade(string Subject, Grade grade)
+        public void AddGrade(string Subject, Grade grade)
         {
             
             try
@@ -63,7 +63,7 @@ class Student
             }
 
         }
-        public void calculateAverageGrade(int classesAmount)
+        public void CalculateAverageGrade(int classesAmount)
         {
             
 
@@ -108,14 +108,14 @@ class Student
             literatureGrade /= literatureGradesCount;
 
             double averageGradeTotal = (mathGrade + physicsGrade + softwareGrade + literatureGrade) / classesAmount;
-            calculateFinalGrade(averageGradeTotal);
+            CalculateFinalGrade(averageGradeTotal);
         }
 
-        public void calculateFinalGrade(double averageGrade)
+        public void CalculateFinalGrade(double averageGrade)
         {
 
 
-            string isPassing = isStudentPassing(averageGrade) ? $"Student passed with a grade of {averageGrade}" : "Student failed to pass";
+            string isPassing = IsStudentPassing(averageGrade) ? $"Student passed with a grade of {averageGrade}" : "Student failed to pass";
 
             Console.WriteLine(isPassing);
         }

@@ -32,12 +32,12 @@ namespace problemTwo
 
             Grade literatureGrade = new Grade(literatureClass, 6);
 
-            John.addGrade(mathematicsClass, mathGrade);    
-            John.addGrade(physicsClass, physicsGrade);    
-            John.addGrade(softwareClass, softwareGrade);    
-            John.addGrade(literatureClass, literatureGrade);   
+            John.AddGrade(mathematicsClass, mathGrade);    
+            John.AddGrade(physicsClass, physicsGrade);    
+            John.AddGrade(softwareClass, softwareGrade);    
+            John.AddGrade(literatureClass, literatureGrade);   
 
-            John.calculateAverageGrade(subjectRequiredGrades);
+            John.CalculateAverageGrade(subjectRequiredGrades);
             
         }
     }
