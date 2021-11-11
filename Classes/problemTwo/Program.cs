@@ -5,25 +5,18 @@ namespace problemTwo
 {
     class Program
     {
-        public enum subjects
-        {
-            Mathematics = 1,
-            Physics = 2,
-            Software = 3,
-            Literature = 4 
-        }
+        
         static void Main(string[] args)
         {
             Student John = new Student("John", "11e");
 
-            string mathematicsClass = subjects.Mathematics.ToString();
+            Enum mathematicsClass = subjects.Mathematics;
 
-            string physicsClass = subjects.Physics.ToString();
+            Enum physicsClass = subjects.Physics;
 
-            string softwareClass = subjects.Software.ToString();
+            Enum softwareClass = subjects.Software;
 
-            string literatureClass = subjects.Literature.ToString();
-
+            Enum literatureClass = subjects.Literature;
             int subjectRequiredGrades = Enum.GetNames(typeof(subjects)).Length;
 
             Grade mathGrade = new Grade(mathematicsClass, 6);
@@ -41,4 +34,4 @@ namespace problemTwo
             
         }
     }
-}
+}   

@@ -45,7 +45,7 @@ class Student
                 return false;
             }
         }
-        public void AddGrade(string Subject, Grade grade)
+        public void AddGrade(Enum Subject, Grade grade)
         {
             
             try
@@ -67,20 +67,20 @@ class Student
         {
             
 
-            int mathGradesCount = grades.Where(c => c.subjectName == "Mathematics").Count();
-            int physicsGradesCount = grades.Where(c => c.subjectName == "Physics").Count();
-            int softwareGradesCount = grades.Where(c => c.subjectName == "Software").Count();
-            int literatureGradesCount = grades.Where(c => c.subjectName == "Literature").Count();
+            int mathGradesCount = grades.Where(c => c.subjectName.Equals(subjects.Mathematics)).Count();
+            int physicsGradesCount = grades.Where(c => c.subjectName.Equals(subjects.Physics)).Count();
+            int softwareGradesCount = grades.Where(c => c.subjectName.Equals(subjects.Software)).Count();
+            int literatureGradesCount = grades.Where(c => c.subjectName.Equals(subjects.Mathematics)).Count();
 
             double mathGrade = 0;
             double physicsGrade = 0;
             double softwareGrade = 0;
             double literatureGrade = 0;
 
-            var mathGrades = grades.Where(c => c.subjectName == "Mathematics").Select(item => item.subjectGrade).ToArray();
-            var physicsGrades = grades.Where(c => c.subjectName == "Physics").Select(item => item.subjectGrade).ToArray();
-            var softwareGrades = grades.Where(c => c.subjectName == "Software").Select(item => item.subjectGrade).ToArray();
-            var literatureGrades = grades.Where(c => c.subjectName == "Literature").Select(item => item.subjectGrade).ToArray();
+            var mathGrades = grades.Where(c => c.subjectName.Equals(subjects.Mathematics)).Select(item => item.subjectGrade).ToArray();
+            var physicsGrades = grades.Where(c => c.subjectName.Equals(subjects.Physics)).Select(item => item.subjectGrade).ToArray();
+            var softwareGrades = grades.Where(c => c.subjectName.Equals(subjects.Software)).Select(item => item.subjectGrade).ToArray();
+            var literatureGrades = grades.Where(c => c.subjectName.Equals(subjects.Literature)).Select(item => item.subjectGrade).ToArray();
 
             foreach(double grade in mathGrades)
             {
