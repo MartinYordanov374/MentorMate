@@ -1,5 +1,5 @@
 using System;
-class Iguana : Reptile
+class Iguana : Animal, Reptile
 {
     public bool isPoisonous {get; internal set;}
     public bool isVenomous {get; internal set;}
@@ -7,6 +7,7 @@ class Iguana : Reptile
     public bool isSocial {get; internal set;}
     public bool canSwim {get; internal set;}
     public string skinColor {get; internal set;}
+
     public Iguana (bool isPoisonous, bool isVenomous, bool isTerritorial, bool isSocial, bool canSwim, string skinColor)
     {
         this.isPoisonous = isPoisonous;
@@ -15,6 +16,10 @@ class Iguana : Reptile
         this.isSocial = isSocial;
         this.canSwim = canSwim;
         this.skinColor = skinColor;
+    }
+    public override void MakeSound()
+    {
+        Console.WriteLine("Prrrr");
     }
     public void showInfo()
     {

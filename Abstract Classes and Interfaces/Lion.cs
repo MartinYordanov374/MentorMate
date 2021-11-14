@@ -1,16 +1,21 @@
 using System;
-class Lion : Mammal
+class Lion : Animal, Mammal
 {
     public int fingersCount {get; internal set;}
     public int limbsCount {get; internal set;}
     public string furColor {get; internal set;}
     public bool isCarniovore {get; internal set;}
+
     public Lion(int fingersCount, int limbsCount, bool isCarniovore, string furColor)
     {
         this.fingersCount = fingersCount;
         this.limbsCount = limbsCount;
         this.isCarniovore = isCarniovore;
         this.furColor = furColor;
+    }
+    public override void MakeSound()
+    {
+        Console.WriteLine("ROAR !");
     }
     public void showInfo()
     {
